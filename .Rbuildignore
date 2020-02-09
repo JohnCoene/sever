@@ -1,2 +1,3 @@
 ^test\.R$
 ^LICENSE\.md$
+^\.travis\.yml$
