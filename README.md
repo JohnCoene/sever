@@ -38,7 +38,9 @@ shinyApp(ui, server)
 
 ![](./man/figures/sever2.gif)
 
-## Installation
+## Get it
+
+Install it from Github with:
 
 ``` r
 # install.packages("remotes")
