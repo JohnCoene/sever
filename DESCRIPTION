@@ -1,0 +1,16 @@
+Package: sever
+Title: Customise the 'Shiny' Disconnected Screen
+Version: 0.0.1.9000
+Authors@R: 
+    person(given = "John",
+           family = "Coene",
+           role = c("aut", "cre"),
+           email = "jcoenep@gmail.com")
+Description: Customise the 'Shiny' disconnected screen.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2
+Imports:
+  shiny
