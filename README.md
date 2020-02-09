@@ -36,7 +36,7 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
-![](./man/figures/sever.gif)
+![](./man/figures/sever2.gif)
 
 ## Installation
 
