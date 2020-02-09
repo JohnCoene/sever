@@ -7,7 +7,7 @@ use_sever <- function(){
   shiny::singleton(
     shiny::tags$head(
       shiny::tags$style(
-        "#ss-connect-dialog{display: none;}"
+        "#ss-connect-dialog{display: none !important;}"
       ),
       shiny::tags$script(
         src = "sever-assets/init.js"
