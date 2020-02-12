@@ -1,0 +1,26 @@
+/* Hide Button */
+#ss-connect-dialog{
+  display: none !important;
+}
+
+/* Custom */
+.cleave-overlay{
+  text-align: center;
+  z-index:999;
+  color: white;
+}
+
+.staticParent{
+  position: static;
+}
+
+.cleave-overlay-content{
+  width: 70px;
+  text-align: center;
+  height: 40px;
+  position: absolute;
+  right: 50%;
+  margin-right: -35px;
+  top: 50%;
+  margin-top: -20px;
+}

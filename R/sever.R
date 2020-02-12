@@ -8,12 +8,9 @@
 use_sever <- function(){
   singleton(
     tags$head(
-      tags$style(
-        "#ss-connect-dialog{display: none !important;}"
-      ),
-      tags$script(
-        src = "sever-assets/init.js"
-      )
+      tags$style(href = "sever-assets/style.css", rel = "stylesheet", type = "text/css"),
+      tags$script(src = "sever-assets/sever.js"),
+      tags$script(src = "sever-assets/cleave.js")
     )
   )
 }
