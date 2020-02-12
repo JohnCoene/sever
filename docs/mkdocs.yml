@@ -1,0 +1,18 @@
+site_name: sever
+repo_url: https://github.com/JohnCoene/sever
+site_description: Customise your Shiny disconnected screen and error messages.
+site_author: John Coene
+google_analytics: ['UA-74544116-1', 'sever.john-coene.com']
+extra_css:
+    - css/style.css
+nav:
+    - Home: index.md
+    - Sever: sever.md
+    - Cleave: cleave.md
+    - Changelog: changelog.md
+theme: 
+  name: mkdocs
+  hljs_style: googlecode
+  highlightjs: true
+  hljs_languages:
+      - r

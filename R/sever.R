@@ -4,11 +4,12 @@
 #' 
 #' @importFrom shiny tags singleton tagList
 #' 
+#' @name dependencies
 #' @export
 use_sever <- function(){
   singleton(
     tags$head(
-      tags$style(href = "sever-assets/style.css", rel = "stylesheet", type = "text/css"),
+      tags$link(href = "sever-assets/style.css", rel = "stylesheet"),
       tags$script(src = "sever-assets/sever.js"),
       tags$script(src = "sever-assets/cleave.js")
     )

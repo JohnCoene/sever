@@ -32,36 +32,6 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
-![](./man/figures/sever_example.png)
-
-The first argument `sever` (`html`) is used to specify the html to be displayed on the disconnected screen and defaults to `sever_default`; you can of course change that behaviour.
-
-``` r
-library(shiny)
-library(sever)
-
-disconnected <- tagList(
-  h1("Whoah there..."),
-  p("Something went terrible wrong!"),
-  reload_button("REFRESH", class = "warning")
-)
-
-ui <- fluidPage(
-  use_sever(),
-  h1("sever")
-)
-
-server <- function(input, output){
-  sever(html = disconnected, bg_color = "#000")
-}
-
-shinyApp(ui, server)
-```
-
-![](./man/figures/sever_example2.png)
-
-If you want to even further customise the screen with CSS; it is assigned the `severed` CSS class.
-
 ## Get it
 
 Install it from Github with:

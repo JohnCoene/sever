@@ -1,6 +1,6 @@
 Package: sever
 Title: Customise the 'Shiny' Disconnected Screen
-Version: 0.0.1
+Version: 0.0.2.9000
 Authors@R: 
     person(given = "John",
            family = "Coene",

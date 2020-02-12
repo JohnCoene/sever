@@ -2,10 +2,19 @@
 function get_offset(element) {
   var elementPosition = {};
 
+  var width = element.offsetWidth;
+  var height = element.offsetHeight;
+
+  if(height < 20)
+    height = 20;
+
+  if(width < 20)
+    width = 20;
+
   //set width and height
   // -6 pixels to keep margin between plot if stacked up/side by side
-  elementPosition.width = element.offsetWidth;
-  elementPosition.height = element.offsetHeight;
+  elementPosition.width = width;
+  elementPosition.height = height;
 
   //calculate element top and left
   var _x = element.offsetLeft;
@@ -27,12 +36,13 @@ function get_offset(element) {
 var waiter_to_hide = [];
 
 // show waiter overlay
-function cleave(id, html, color, to_hide){
+function cleave(id, html, color, bg_color, center, duration){
   // declare
   var dom,
       width,
       height,
-      exists = false;
+      exists = false
+      to_hide = false;
 
   // get parent
   dom = document.getElementById(id);
@@ -41,8 +51,8 @@ function cleave(id, html, color, to_hide){
     return ;
   }
 
-  if(dom.offsetHeight < 10)
-    return ;
+  // if(dom.offsetHeight < 10)
+  //   return ;
   
   // allow missing for testing
   to_hide = to_hide || false;
@@ -78,14 +88,24 @@ function cleave(id, html, color, to_hide){
   overlay_content.innerHTML = html;
   overlay_content.classList.add("cleave-overlay-content");
 
+  if(center){
+    // some elements are too small in height
+    if(el.height > 50)
+      overlay_content.style.paddingTop = (el.height / 2) - 10 + 'px';
+
+    overlay_content.style.textAlign = "center";
+  }
+
   // add styles
   overlay.style.height = el.height + 'px';
   overlay.style.width = el.width + 'px';
   overlay.style.top = el.top + 'px';
   overlay.style.left = el.left + 'px';
-  overlay.style.backgroundColor = color;
+  overlay.style.color = color;
+  overlay.style.backgroundColor = bg_color;
   overlay.style.position = "absolute";
   overlay.style.zIndex = 999;
+  overlay.style.animation = "expand " + duration + "s ease-in-out";
   overlay.classList.add("cleave-overlay");
 
   // append overlay content in overlay
@@ -96,8 +116,28 @@ function cleave(id, html, color, to_hide){
   
 }
 
-$(document).on('shiny:error', function(event) {
-  if(waiter_to_hide.includes(event.name)){
-    //cleave(event.name);
-  }
+Shiny.addCustomMessageHandler('cleave-it', function(opts) {
+
+  $(document).on('shiny:error', function(event) {
+
+    if(opts.html == null)
+      opts.html = '<span>' + event.error.message + '</span>';
+
+    if(opts.bg_color == null)
+      opts.bg_color = 'rgba(0,0,0,0)';
+
+    // apply to all 
+    if(opts.ids == null){
+      event.preventDefault();
+      cleave(event.name, opts.html, opts.color, opts.bg_color, opts.center, opts.duration)
+    } else { // apply to relevant ids
+      opts.ids.forEach((value, index) => {
+        if(opts.ids == event.name){
+          event.preventDefault();
+          cleave(event.name, opts.html, opts.color, opts.bg_color, opts.center, opts.duration)
+        }
+      });
+    }
+  });
+
 });
