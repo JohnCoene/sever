@@ -8,7 +8,7 @@
 [![CircleCI build status](https://circleci.com/gh/JohnCoene/sever.svg?style=svg)](https://circleci.com/gh/JohnCoene/sever)
 <!-- badges: end -->
 
-Customise shiny disconnected screen.
+Good-looking problems: customise your Shiny disconnected screen and error messages.
 
 </div>
 
