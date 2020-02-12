@@ -1,3 +1,6 @@
 ^test\.R$
 ^LICENSE\.md$
 ^\.travis\.yml$
+^appveyor\.yml$
+^\.circleci$
+^\.circleci/config\.yml$
