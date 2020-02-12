@@ -17,8 +17,6 @@ function chgDefault(bg_color, opacity){
 
   css = "#shiny-disconnected-overlay{background-color: " + bg_color + "; opacity: " + opacity + "}";
 
-  console.log(css);
-
   head.appendChild(style);
 
   style.type = 'text/css';
