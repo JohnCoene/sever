@@ -58,6 +58,8 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+![](./man/figures/sever_example2.png)
+
 If you want to even further customise the screen with CSS; it is assigned the `severed` CSS class.
 
 ## Get it
