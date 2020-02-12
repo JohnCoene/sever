@@ -5,7 +5,7 @@
 \title{Sever}
 \usage{
 sever(
-  ...,
+  html = sever_default(),
   bg_color = "#333e48",
   color = "#fff",
   opacity = 1,
@@ -13,7 +13,8 @@ sever(
 )
 }
 \arguments{
-\item{...}{Shiny tags to use as content for the disconnected screen.}
+\item{html}{Shiny tags to use as content for the disconnected screen,
+generally \link[shiny]{tagList}.}
 
 \item{bg_color, color}{Background color, color of text.}
 

@@ -2,14 +2,16 @@
 #' 
 #' Import dependencies, place this in your shiny UI.
 #' 
+#' @importFrom shiny tags singleton tagList
+#' 
 #' @export
 use_sever <- function(){
-  shiny::singleton(
-    shiny::tags$head(
-      shiny::tags$style(
+  singleton(
+    tags$head(
+      tags$style(
         "#ss-connect-dialog{display: none !important;}"
       ),
-      shiny::tags$script(
+      tags$script(
         src = "sever-assets/init.js"
       )
     )
@@ -20,7 +22,8 @@ use_sever <- function(){
 #' 
 #' Customise the Shiny disconnected screen.
 #' 
-#' @param ... Shiny tags to use as content for the disconnected screen.
+#' @param html Shiny tags to use as content for the disconnected screen,
+#' generally \link[shiny]{tagList}.
 #' @param bg_color,color Background color, color of text.
 #' @param opacity Opacity of background. 
 #' @param session A valid shiny session.
@@ -46,12 +49,11 @@ use_sever <- function(){
 #'  shinyApp(ui, server)
 #' 
 #' @export
-sever <- function(..., bg_color = "#333e48", color = "#fff", opacity = 1, session = shiny::getDefaultReactiveDomain()){
+sever <- function(html = sever_default(), bg_color = "#333e48", color = "#fff", opacity = 1, session = shiny::getDefaultReactiveDomain()){
 
-  content <- shiny::tagList(...)
-  content <- as.character(content)
+  html <- as.character(html)
 
-  msg <- list(content = content, bg_color = bg_color, color = color, opacity = opacity)
+  msg <- list(content = html, bg_color = bg_color, color = color, opacity = opacity)
 
   session$sendCustomMessage("sever-it", msg)
 }
@@ -68,7 +70,7 @@ sever <- function(..., bg_color = "#333e48", color = "#fff", opacity = 1, sessio
 reload_button <- function(text = "reload", class = c("default", "danger", "info", "success", "warning")){
   class <- match.arg(class)
   class <- paste0("btn btn-", class)
-  shiny::tags$button(text, onClick = "location.reload();", class = class)
+  tags$button(text, onClick = "location.reload();", class = class)
 }
 
 #' @rdname reload
@@ -76,5 +78,21 @@ reload_button <- function(text = "reload", class = c("default", "danger", "info"
 reload_link <- function(text = "reload", class = c("default", "danger", "info", "success", "warning")){
   class <- match.arg(class)
   class <- paste0("text-", class)
-  shiny::tags$a(text, onClick = "location.reload();", class = class)
+  tags$a(text, onClick = "location.reload();", class = class)
+}
+
+#' Default Sever Screen
+#' 
+#' The default sever screen for convenience.
+#' 
+#' @param title,subtitle Title and subtitle.
+#' @param button Text to display on button, passed to \code{\link{reload_button}}.
+#' 
+#' @export
+sever_default <- function(title = "Whoops!", subtitle = "You have been disconnected", button = "Reload"){
+  tagList(
+    tags$h1(title),
+    tags$p(subtitle),
+    reload_button(button)
+  )
 }
