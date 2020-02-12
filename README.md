@@ -32,7 +32,7 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
-![](./man/figures/sever2.gif)
+![](./man/figures/sever_example.png)
 
 The first argument `sever` (`html`) is used to specify the html to be displayed on the disconnected screen and defaults to `sever_default`; you can of course change that behaviour.
 
