@@ -7,24 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="John Coene">
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Examples - sever</title>
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>sever</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="../css/style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
   
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Examples";
-    var mkdocs_page_input_path = "examples.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="./js/jquery-2.1.1.min.js" defer></script>
+  <script src="./js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
@@ -48,9 +41,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> sever</a>
+        <a href="./." class="icon icon-home"> sever</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -62,7 +55,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="..">Home</a>
+    <a class="" href="./.">Home</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -71,36 +64,22 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../sever/">Sever</a>
+    <a class="" href="./sever/">Sever</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../cleave/">Cleave</a>
+    <a class="" href="./cleave/">Cleave</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Examples</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#examples">Examples</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#combine">Combine</a></li>
-        
-            <li><a class="toctree-l4" href="#server-defined-variables">Server Defined Variables</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="./examples/">Examples</a>
                 </li>
     </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../changelog/">Changelog</a>
+    <a class="" href="./changelog/">Changelog</a>
 	    </li>
           
         </ul>
@@ -113,7 +92,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">sever</a>
+        <a href="./.">sever</a>
       </nav>
 
       
@@ -121,19 +100,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="./.">Docs</a> &raquo;</li>
     
-      
-        
-          <li>User Guide &raquo;</li>
-        
-      
     
-    <li>Examples</li>
     <li class="wy-breadcrumbs-aside">
-      
-        <a href="https://github.com/JohnCoene/sever/edit/master/docs/docs/examples.md"
-          class="icon icon-github"> Edit on GitHub</a>
       
     </li>
   </ul>
@@ -142,60 +112,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="examples">Examples</h1>
-<h2 id="combine">Combine</h2>
-<p>You can of course combine sever and cleave.</p>
-<pre><code class="r">library(shiny)
-library(sever)
 
-ui &lt;- fluidPage(
-  use_sever(),
-  uiOutput(&quot;error&quot;)
-)
+  <h1 id="search">Search Results</h1>
 
-server &lt;- function(input, output){
-  sever()
-  cleave()
+  <form id="content_search" action="search.html">
+    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off" autofocus title="Type search term here">
+  </form>
 
-  output$error &lt;- renderPrint(error)
-}
+  <div id="mkdocs-search-results" class="search-results">
+    Searching...
+  </div>
 
-shinyApp(ui, server)
-</code></pre>
 
-<h2 id="server-defined-variables">Server Defined Variables</h2>
-<p>You can use variables defined server-side to deliver for informative messages.</p>
-<pre><code class="r">library(shiny)
-library(sever)
-
-ui &lt;- fluidPage(
-  use_sever(),
-  textInput(&quot;name&quot;, &quot;Your name&quot;)
-)
-
-server &lt;- function(input, output){
-
-  observeEvent(input$name, {
-    msg &lt;- p(input$name, &quot;broke the app :(&quot;)
-    sever(msg)
-  })
-}
-
-shinyApp(ui, server)
-</code></pre>
-              
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../changelog/" class="btn btn-neutral float-right" title="Changelog">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../cleave/" class="btn btn-neutral" title="Cleave"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -221,16 +153,12 @@ shinyApp(ui, server)
           <a href="https://github.com/JohnCoene/sever/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../cleave/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../changelog/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
+    <script>var base_url = '.';</script>
+    <script src="./js/theme.js" defer></script>
+      <script src="./search/main.js" defer></script>
 
 </body>
 </html>
