@@ -15,7 +15,7 @@ nav:
         - Examples: examples.md
     - Changelog: changelog.md
 theme: 
-  name: mkdocs
+  name: readthedocs
   hljs_style: dark
   highlightjs: true
   hljs_languages:

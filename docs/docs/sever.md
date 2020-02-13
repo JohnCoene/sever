@@ -1,4 +1,4 @@
-# sever
+# Sever
 
 Sever will let you customise the Shiny disconnected screen.
 
