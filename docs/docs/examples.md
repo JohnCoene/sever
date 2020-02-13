@@ -48,3 +48,26 @@ shinyApp(ui, server)
 ```
 
 ![](./img/example_02.png)
+
+## Hide Errors
+
+You could use cleave to hide error messages though I'm unsure it's a good idea (fail loudly?).
+
+```r
+library(shiny)
+library(sever)
+
+ui <- fluidPage(
+  use_sever(),
+  uiOutput("error")
+)
+
+server <- function(input, output){
+
+  cleave("")
+  
+  output$error <- renderUI(error)
+}
+
+shinyApp(ui, server)
+```
