@@ -34,7 +34,7 @@ library(sever)
 
 disconnected <- tagList(
   h1("Whoah there..."),
-  p("Something went terrible wrong!"),
+  p("Something went terribly wrong!"),
   reload_button("REFRESH", class = "warning")
 )
 

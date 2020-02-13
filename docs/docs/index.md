@@ -1,11 +1,10 @@
-# sever
-
 Good-looking problems: customise your Shiny disconnected screen and error messages.
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/JohnCoene/sever.svg?branch=master)](https://travis-ci.org/JohnCoene/sever)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/JohnCoene/sever?branch=master&svg=true)](https://ci.appveyor.com/project/JohnCoene/sever)
 [![CircleCI build status](https://circleci.com/gh/JohnCoene/sever.svg?style=svg)](https://circleci.com/gh/JohnCoene/sever)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/JohnCoene/sever" data-show-count="true" aria-label="Star JohnCoene/sever on GitHub">Star</a>
