@@ -2,13 +2,14 @@
 Shiny.addCustomMessageHandler('sever-it', function(opts) {
 
   $(document).on('shiny:disconnected', function(event) {
-    chgDefault(opts.bg_color, opts.opacity);
+    remove_sever();
+    chg_default(opts.bg_color, opts.opacity);
     sever(opts.content, opts.color);
   });
 
 });
 
-function chgDefault(bg_color, opacity){
+function chg_default(bg_color, opacity){
 
   // set css
   var css,
@@ -43,4 +44,11 @@ function sever(content, color){
   dv.style.color = color;
 
   document.body.appendChild(dv);
+}
+
+function remove_sever(){
+  let severed = document.getElementsByClassName("severed");
+  for (let s of severed) {
+    s.remove();
+  }
 }

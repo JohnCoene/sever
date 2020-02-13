@@ -2,6 +2,7 @@
 
 - Added `cleave` to customise error messages!
 - Created website
+- Ensure a single severed screen is present at any one time.
 
 # sever 0.0.1
 

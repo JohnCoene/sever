@@ -21,3 +21,7 @@ a, h1{
   background-color: #D69899;
   color: #000;
 }
+
+.navbar-toggle{
+  border-color: #B54648 !important;
+}

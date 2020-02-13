@@ -8,7 +8,7 @@
         <meta name="author" content="John Coene">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Changelog - sever</title>
+        <title>Examples - sever</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -66,11 +66,11 @@
                             <li >
                                 <a href="../cleave/">Cleave</a>
                             </li>
-                            <li >
-                                <a href="../examples/">Examples</a>
-                            </li>
                             <li class="active">
-                                <a href="./">Changelog</a>
+                                <a href="./">Examples</a>
+                            </li>
+                            <li >
+                                <a href="../changelog/">Changelog</a>
                             </li>
                         </ul>
 
@@ -81,17 +81,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../examples/">
+                                <a rel="next" href="../cleave/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li class="disabled">
-                                <a rel="prev" >
+                            <li >
+                                <a rel="prev" href="../changelog/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/JohnCoene/sever/edit/master/docs/changelog.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/JohnCoene/sever/edit/master/docs/examples.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -101,26 +101,54 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#sever-002">sever 0.0.2</a></li>
-        <li class="main "><a href="#sever-001">sever 0.0.1</a></li>
-        <li class="main "><a href="#sever-0019000">sever 0.0.1.9000</a></li>
+        <li class="main active"><a href="#examples">Examples</a></li>
+            <li><a href="#combine">Combine</a></li>
+            <li><a href="#server-defined-variables">Server Defined Variables</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="sever-002">sever 0.0.2</h1>
-<ul>
-<li>Added <code>cleave</code> to customise error messages!</li>
-<li>Created website</li>
-<li>Ensure a single severed screen is present at any one time.</li>
-</ul>
-<h1 id="sever-001">sever 0.0.1</h1>
-<ul>
-<li><code>sever_default</code> A default sever screen.</li>
-<li>Simplified <code>sever</code> function: change three-dots to <code>html</code> argument which takes <code>sever_default</code>.</li>
-</ul>
-<h1 id="sever-0019000">sever 0.0.1.9000</h1>
-<p>Initial dev version.</p></div>
+<h1 id="examples">Examples</h1>
+<h2 id="combine">Combine</h2>
+<p>You can of course combine sever and cleave.</p>
+<pre><code class="r">library(shiny)
+library(sever)
+
+ui &lt;- fluidPage(
+  use_sever(),
+  uiOutput(&quot;error&quot;)
+)
+
+server &lt;- function(input, output){
+  sever()
+  cleave()
+
+  output$error &lt;- renderPrint(error)
+}
+
+shinyApp(ui, server)
+</code></pre>
+
+<h2 id="server-defined-variables">Server Defined Variables</h2>
+<p>You can use variables defined server-side to deliver for informative messages.</p>
+<pre><code class="r">library(shiny)
+library(sever)
+
+ui &lt;- fluidPage(
+  use_sever(),
+  textInput(&quot;name&quot;, &quot;Your name&quot;)
+)
+
+server &lt;- function(input, output){
+
+  observeEvent(input$name, {
+    msg &lt;- p(input$name, &quot;broke the app :(&quot;)
+    sever(msg)
+  })
+}
+
+shinyApp(ui, server)
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

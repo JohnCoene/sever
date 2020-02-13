@@ -8,13 +8,15 @@ Good-looking problems: customise your Shiny disconnected screen and error messag
 [![CircleCI build status](https://circleci.com/gh/JohnCoene/sever.svg?style=svg)](https://circleci.com/gh/JohnCoene/sever)
 <!-- badges: end -->
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/JohnCoene/sever" data-icon="octicon-star" aria-label="Star JohnCoene/sever on GitHub">Star</a>
+<a class="github-button" href="https://github.com/JohnCoene/sever" data-show-count="true" aria-label="Star JohnCoene/sever on GitHub">Star</a>
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/sponsors/JohnCoene" data-icon="octicon-heart" aria-label="Sponsor @JohnCoene on GitHub">Sponsor</a>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 ## Install
+
+Get it from Github with `remotes` or `devtools`:
 
 ```r
 # install.packages("remotes")
@@ -47,3 +49,4 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+<a href="https://www.buymeacoffee.com/JohnCoene" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
