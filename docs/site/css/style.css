@@ -9,3 +9,7 @@ a, h1{
 .wy-side-nav-search input[type=text]{
   border-color: black !important;
 }
+
+.wy-nav-top{
+  background: #B54648 !important;
+}

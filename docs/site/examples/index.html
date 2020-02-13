@@ -155,7 +155,7 @@ ui &lt;- fluidPage(
 
 server &lt;- function(input, output){
   sever()
-  cleave()
+  cleave(&quot;Gah!&quot;)
 
   output$error &lt;- renderPrint(error)
 }
@@ -183,6 +183,8 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
+
+<p><img alt="" src="../img/example_02.png" /></p>
               
             </div>
           </div>
