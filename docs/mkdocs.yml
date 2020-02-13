@@ -4,6 +4,7 @@ site_description: Customise your Shiny disconnected screen and error messages.
 site_author: John Coene
 google_analytics: ['UA-74544116-1', 'sever.john-coene.com']
 dev_addr: 'localhost:3000'
+edit_uri: https://github.com/JohnCoene/sever/docs
 extra_css:
     - css/style.css
 nav:
