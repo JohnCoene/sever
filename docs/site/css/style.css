@@ -17,6 +17,10 @@ a, h1{
   background: #B54648;
 }
 
+.navbar{
+  border-color: #B54648;
+}
+
 .navbar-default .navbar-nav > li > a:hover{
   background-color: #D69899;
   color: #000;
@@ -25,3 +29,12 @@ a, h1{
 .navbar-toggle{
   border-color: #B54648 !important;
 }
+
+.dropdown-menu>.active>a{
+  background-color: #B54648 !important;
+}
+
+.dropdown-menu>li>a:hover{
+  background-color: #D69899;
+  color: #000;
+} 
