@@ -15,7 +15,7 @@ ui <- fluidPage(
 
 server <- function(input, output){
   sever()
-  cleave()
+  cleave("Gah!")
 
   output$error <- renderPrint(error)
 }
@@ -46,3 +46,5 @@ server <- function(input, output){
 
 shinyApp(ui, server)
 ```
+
+![](./img/example_02.png)

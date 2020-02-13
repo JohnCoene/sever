@@ -34,6 +34,10 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+By default not much changes.
+
+![](./img/cleave_simple.png)
+
 ## Single Message
 
 The first element of the `cleave` function lets you specify a different error message. You can also customise the text and background color.
@@ -105,6 +109,8 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+![](./img/cleave_custom.png)
+
 ## Theme
 
 You can set a theme for all your `cleave` to avoid repeating arguments and ensure all errors have a consistent look. This can be done inside or outside the server function. Notice the `duration` argument to change the duration of the animation, set to 0 to have none.
@@ -153,17 +159,18 @@ library(shiny)
 library(sever)
 
 cl <- tagList(
-  h3("Typed the wrong code"),
+  h3("Hadley typed the wrong code"),
   tags$img(src="https://i.imgur.com/7J1bEaJ.gif", height="250px")
 )
 
 ui <- fluidPage(
   use_sever(),
+  h4("Look at my plot"),
   plotOutput("plot")
 )
 
 server <- function(input, output){
-  cleave(cl, center = FALSE)
+  cleave(cl, color = "black", center = FALSE)
 
   # will generate an error
   output$plot <- renderPlot({
@@ -174,4 +181,5 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
-![](./img/cleave_typing.gif)
+![](./img/cleave_hadley.gif)
+
