@@ -82,6 +82,8 @@
         
             <li><a class="toctree-l4" href="#customise">Customise</a></li>
         
+            <li><a class="toctree-l4" href="#background-image">Background Image</a></li>
+        
         </ul>
     
 
@@ -163,7 +165,30 @@ shinyApp(ui, server)
 
 <p><img alt="" src="../img/sever_example.png" /></p>
 <h2 id="customise">Customise</h2>
-<p>The first argument of the <code>sever</code>function (<code>html</code>) is used to specify the html to be displayed on the disconnected screen and defaults to <code>sever_default</code>; you can of course change that behaviour.</p>
+<p>The first argument of the <code>sever</code>function (<code>html</code>) is used to specify the html to be displayed on the disconnected screen and defaults to <code>sever_default</code>; you can of course change that behaviour. You can customise the default to some extend.</p>
+<pre><code class="r">library(shiny)
+library(sever)
+
+disconnected &lt;- sever_default(
+  title = &quot;Gah!&quot;, 
+  subtitle = &quot;Your session ended&quot;, 
+  button = &quot;Reconnect&quot;, 
+  button_class = &quot;info&quot;
+)
+
+ui &lt;- fluidPage(
+  use_sever(),
+  h1(&quot;sever&quot;)
+)
+
+server &lt;- function(input, output){
+  sever(html = disconnected, bg_color = &quot;white&quot;, color = &quot;black&quot;)
+}
+
+shinyApp(ui, server)
+</code></pre>
+
+<p><img alt="" src="../img/sever_default_customised.png" /></p>
 <pre><code class="r">library(shiny)
 library(sever)
 
@@ -187,6 +212,30 @@ shinyApp(ui, server)
 
 <p><img alt="" src="../img/sever_example2.png" /></p>
 <p>If you want to even further customise the screen with CSS; it is assigned the <code>severed</code> CSS class.</p>
+<h2 id="background-image">Background Image</h2>
+<p>You can also use a background image.</p>
+<pre><code class="r">library(shiny)
+library(sever)
+
+img &lt;- paste0(
+  &quot;https://images.pexels.com/photos/4827/&quot;,
+  &quot;nature-forest-trees-fog.jpeg?auto=compress&quot;,
+  &quot;&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260&quot;
+)
+
+ui &lt;- fluidPage(
+  use_sever(),
+  h1(&quot;sever&quot;)
+)
+
+server &lt;- function(input, output){
+  sever(bg_image = img, color = &quot;black&quot;)
+}
+
+shinyApp(ui, server)
+</code></pre>
+
+<p><img alt="" src="../img/sever_img.png" /></p>
               
             </div>
           </div>

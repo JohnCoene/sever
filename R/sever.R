@@ -24,6 +24,7 @@ use_sever <- function(){
 #' generally \link[shiny]{tagList}.
 #' @param bg_color,color Background color, color of text.
 #' @param opacity Opacity of background. 
+#' @param bg_image Background image to use.
 #' @param session A valid shiny session.
 #' 
 #' @examples 
@@ -47,11 +48,19 @@ use_sever <- function(){
 #'  shinyApp(ui, server)
 #' 
 #' @export
-sever <- function(html = sever_default(), bg_color = "#333e48", color = "#fff", opacity = 1, session = shiny::getDefaultReactiveDomain()){
+sever <- function(html = sever_default(), color = "#fff", opacity = 1, 
+  bg_color = "#333e48", bg_image = NULL, 
+  session = shiny::getDefaultReactiveDomain()){
 
   html <- as.character(html)
 
-  msg <- list(content = html, bg_color = bg_color, color = color, opacity = opacity)
+  msg <- list(
+    content = html, 
+    bg_color = bg_color, 
+    color = color, 
+    opacity = opacity,
+    bg_image = bg_image
+  )
 
   is_running_golem <- runs_golem()
 

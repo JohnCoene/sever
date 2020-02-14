@@ -78,3 +78,31 @@ shinyApp(ui, server)
 ![](./img/sever_example2.png)
 
 If you want to even further customise the screen with CSS; it is assigned the `severed` CSS class.
+
+## Background Image
+
+You can also use a background image.
+
+``` r
+library(shiny)
+library(sever)
+
+img <- paste0(
+  "https://images.pexels.com/photos/4827/",
+  "nature-forest-trees-fog.jpeg?auto=compress",
+  "&cs=tinysrgb&dpr=2&h=750&w=1260"
+)
+
+ui <- fluidPage(
+  use_sever(),
+  h1("sever")
+)
+
+server <- function(input, output){
+  sever(bg_image = img, color = "black")
+}
+
+shinyApp(ui, server)
+```
+
+![](./img/sever_img.png)

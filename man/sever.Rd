@@ -6,9 +6,10 @@
 \usage{
 sever(
   html = sever_default(),
-  bg_color = "#333e48",
   color = "#fff",
   opacity = 1,
+  bg_color = "#333e48",
+  bg_image = NULL,
   session = shiny::getDefaultReactiveDomain()
 )
 }
@@ -16,9 +17,11 @@ sever(
 \item{html}{Shiny tags to use as content for the disconnected screen,
 generally \link[shiny]{tagList}.}
 
+\item{opacity}{Opacity of background.}
+
 \item{bg_color, color}{Background color, color of text.}
 
-\item{opacity}{Opacity of background.}
+\item{bg_image}{Background image to use.}
 
 \item{session}{A valid shiny session.}
 }

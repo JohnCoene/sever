@@ -3,20 +3,23 @@ Shiny.addCustomMessageHandler('sever-it', function(opts) {
 
   $(document).on('shiny:disconnected', function(event) {
     remove_sever();
-    chg_default(opts.bg_color, opts.opacity);
+    chg_default(opts.bg_color, opts.opacity, opts.bg_image);
     sever(opts.content, opts.color);
   });
 
 });
 
-function chg_default(bg_color, opacity){
+function chg_default(bg_color, opacity, bg_image){
 
   // set css
   var css,
       head = document.head || document.getElementsByTagName('head')[0],
       style = document.createElement('style');
 
-  css = "#shiny-disconnected-overlay{background-color: " + bg_color + "; opacity: " + opacity + "}";
+  if(bg_color == undefined)
+    bg_color = "none";
+
+  css = "#shiny-disconnected-overlay{background-color: " + bg_color + "; opacity: " + opacity + "; background-size: cover; background-image: url('" + bg_image + "')}";
 
   head.appendChild(style);
 
