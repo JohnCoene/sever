@@ -27,14 +27,19 @@ cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
   # force list of forEach fails
   if(!is.null(ids)) ids <- as.list(ids)
 
-  color <- get_option("CLEAVE_COLOR", color)
-  bg_color <- get_option("CLEAVE_BG_COLOR", bg_color)
-  center <- get_option("CLEAVE_CENTER", center)
-  duration <- get_option("CLEAVE_DURATION", duration)
+  color <- get_theme("CLEAVE_COLOR", color)
+  bg_color <- get_theme("CLEAVE_BG_COLOR", bg_color)
+  center <- get_theme("CLEAVE_CENTER", center)
+  duration <- get_theme("CLEAVE_DURATION", duration)
 
   msg <- list(html = html, color = color, bg_color = bg_color, center = center, ids = ids, duration = duration)
 
-  session$sendCustomMessage("cleave-it", msg)
+  is_running_golem <- runs_golem()
+  
+  if(is_running_golem)
+    session$sendCustomMessage("cleave-it", msg)
+
+  invisible()
 }
 
 #' Cleave Theme
@@ -52,11 +57,4 @@ cleave_theme <- function(color = "red", bg_color = NULL, duration = .3, center =
     CLEAVE_CENTER = center
   )
   invisible()
-}
-
-get_option <- function(option, value){
-  if(is.null(value))
-    value <- getOption(option)
-  
-  return(value)
 }

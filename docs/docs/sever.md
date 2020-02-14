@@ -26,7 +26,32 @@ shinyApp(ui, server)
 
 ## Customise
 
-The first argument of the `sever`function (`html`) is used to specify the html to be displayed on the disconnected screen and defaults to `sever_default`; you can of course change that behaviour.
+The first argument of the `sever`function (`html`) is used to specify the html to be displayed on the disconnected screen and defaults to `sever_default`; you can of course change that behaviour. You can customise the default to some extend.
+
+``` r
+library(shiny)
+library(sever)
+
+disconnected <- sever_default(
+  title = "Gah!", 
+  subtitle = "Your session ended", 
+  button = "Reconnect", 
+  button_class = "info"
+)
+
+ui <- fluidPage(
+  use_sever(),
+  h1("sever")
+)
+
+server <- function(input, output){
+  sever(html = disconnected, bg_color = "white", color = "black")
+}
+
+shinyApp(ui, server)
+```
+
+![](./img/sever_default_customised.png)
 
 ``` r
 library(shiny)

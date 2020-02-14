@@ -3,6 +3,7 @@
 - Added `cleave` to customise error messages!
 - Created website
 - Ensure a single severed screen is present at any one time.
+- Check if `golem.app.prod` option is set to keep functions from running if in dev mode to allow debugging, runs in prod. If not set runs functions as expected.
 
 # sever 0.0.1
 

@@ -7,13 +7,16 @@
 sever_default(
   title = "Whoops!",
   subtitle = "You have been disconnected",
-  button = "Reload"
+  button = "Reload",
+  button_class = "default"
 )
 }
 \arguments{
-\item{title, subtitle}{Title and subtitle.}
+\item{title, subtitle}{Title and subtitle to display.}
 
 \item{button}{Text to display on button, passed to \code{\link{reload_button}}.}
+
+\item{button_class}{Class of button, passed to \code{\link{reload_button}}.}
 }
 \description{
 The default sever screen for convenience.

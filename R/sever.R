@@ -53,7 +53,12 @@ sever <- function(html = sever_default(), bg_color = "#333e48", color = "#fff", 
 
   msg <- list(content = html, bg_color = bg_color, color = color, opacity = opacity)
 
-  session$sendCustomMessage("sever-it", msg)
+  is_running_golem <- runs_golem()
+
+  if(is_running_golem)
+    session$sendCustomMessage("sever-it", msg)
+
+  invisible()
 }
 
 #' Reload
@@ -83,14 +88,15 @@ reload_link <- function(text = "reload", class = c("default", "danger", "info", 
 #' 
 #' The default sever screen for convenience.
 #' 
-#' @param title,subtitle Title and subtitle.
+#' @param title,subtitle Title and subtitle to display.
 #' @param button Text to display on button, passed to \code{\link{reload_button}}.
+#' @param button_class Class of button, passed to \code{\link{reload_button}}.
 #' 
 #' @export
-sever_default <- function(title = "Whoops!", subtitle = "You have been disconnected", button = "Reload"){
+sever_default <- function(title = "Whoops!", subtitle = "You have been disconnected", button = "Reload", button_class = "default"){
   tagList(
     tags$h1(title),
     tags$p(subtitle),
-    reload_button(button)
+    reload_button(button, class = button_class)
   )
 }
