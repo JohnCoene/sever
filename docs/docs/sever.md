@@ -26,7 +26,7 @@ shinyApp(ui, server)
 
 ## Customise
 
-The first argument `sever` (`html`) is used to specify the html to be displayed on the disconnected screen and defaults to `sever_default`; you can of course change that behaviour.
+The first argument of the `sever`function (`html`) is used to specify the html to be displayed on the disconnected screen and defaults to `sever_default`; you can of course change that behaviour.
 
 ``` r
 library(shiny)
