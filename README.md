@@ -2,6 +2,8 @@
 
 # sever
 
+![](https://sever.john-coene.com/img/sever_example.png)
+
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/JohnCoene/sever.svg?branch=master)](https://travis-ci.org/JohnCoene/sever)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/JohnCoene/sever?branch=master&svg=true)](https://ci.appveyor.com/project/JohnCoene/sever)
