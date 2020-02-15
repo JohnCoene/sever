@@ -1,3 +1,5 @@
+![](./img/logo.png)
+
 Good-looking problems: customise your Shiny disconnected screen and error messages.
 
 <a class="github-button" href="https://github.com/JohnCoene/sever" data-show-count="true" aria-label="Star JohnCoene/sever on GitHub">Star</a> <a class="github-button" href="https://github.com/sponsors/JohnCoene" data-icon="octicon-heart" aria-label="Sponsor @JohnCoene on GitHub">Sponsor</a>

@@ -1,8 +1,6 @@
 <div align="center">
 
-# sever
-
-![](https://sever.john-coene.com/img/sever_example.png)
+![](./man/figures/logo.png)
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/JohnCoene/sever.svg?branch=master)](https://travis-ci.org/JohnCoene/sever)
