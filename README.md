@@ -33,6 +33,8 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+![](https://sever.john-coene.com/img/sever_example.png)
+
 ## Get it
 
 Install it from Github with:
