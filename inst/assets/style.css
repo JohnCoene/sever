@@ -9,10 +9,8 @@
   }
 }
 
-
 /* Custom */
 .cleave-overlay{
-  text-align: center;
   z-index:999;
   color: black;
 }

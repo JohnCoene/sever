@@ -36,7 +36,7 @@ function get_offset(element) {
 var waiter_to_hide = [];
 
 // show waiter overlay
-function cleave(id, html, color, bg_color, center, duration){
+function cleave(id, html, color, bg_color, duration, center_vertical, center_horizontal){
   // declare
   var dom,
       width,
@@ -88,13 +88,13 @@ function cleave(id, html, color, bg_color, center, duration){
   overlay_content.innerHTML = html;
   overlay_content.classList.add("cleave-overlay-content");
 
-  if(center){
-    // some elements are too small in height
-    if(el.height > 50)
-      overlay_content.style.paddingTop = (el.height / 2) - 10 + 'px';
+  // some elements are too small in height
+  if(center_vertical && el.height > 50)
+    overlay_content.style.paddingTop = (el.height / 2) - 10 + 'px';
 
+  if(center_horizontal)
     overlay_content.style.textAlign = "center";
-  }
+  
 
   // add styles
   overlay.style.height = el.height + 'px';
@@ -129,12 +129,12 @@ Shiny.addCustomMessageHandler('cleave-it', function(opts) {
     // apply to all 
     if(opts.ids == null){
       event.preventDefault();
-      cleave(event.name, opts.html, opts.color, opts.bg_color, opts.center, opts.duration)
+      cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
     } else { // apply to relevant ids
       opts.ids.forEach((value, index) => {
         if(opts.ids == event.name){
           event.preventDefault();
-          cleave(event.name, opts.html, opts.color, opts.bg_color, opts.center, opts.duration)
+          cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
         }
       });
     }

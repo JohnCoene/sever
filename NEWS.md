@@ -1,3 +1,7 @@
+# sever 0.0.3
+
+- Changed cleave `center` argument to `center_horizontal` and `center_vertical` for more flexibility. 
+
 # sever 0.0.2
 
 - Added `cleave` to customise error messages!

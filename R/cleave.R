@@ -7,13 +7,14 @@
 #' @param color Color of error message text.
 #' @param bg_color Background color of error message overlay. 
 #' If \code{NULL} will be transparent.
-#' @param center Whether to center the message vertically and horizontally, a \code{boolean}.
+#' @param center_vertical,center_horizontal Whether to center the message vertically and horizontally, a \code{boolean}.
 #' @param session A valid shiny session.
 #' @param ids Ids of elements to apply the cleave to. If \code{NULL} applies to all error messages.
 #' @param duration Duration of animation showing the error message, set to \code{0} to have none.
 #' 
 #' @export
-cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, center = NULL, ids = NULL, session = shiny::getDefaultReactiveDomain()){
+cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, center_vertical = NULL,
+  center_horizontal = NULL, ids = NULL, session = shiny::getDefaultReactiveDomain()){
 
   if(!is.null(html)){
 
@@ -29,10 +30,19 @@ cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
 
   color <- get_theme("CLEAVE_COLOR", color)
   bg_color <- get_theme("CLEAVE_BG_COLOR", bg_color)
-  center <- get_theme("CLEAVE_CENTER", center)
+  center_horizontal <- get_theme("CLEAVE_CENTER_HORIZONTAL", center_horizontal)
+  center_vertical <- get_theme("CLEAVE_CENTER_VERTICAL", center_vertical)
   duration <- get_theme("CLEAVE_DURATION", duration)
 
-  msg <- list(html = html, color = color, bg_color = bg_color, center = center, ids = ids, duration = duration)
+  msg <- list(
+    html = html, 
+    color = color, 
+    bg_color = bg_color, 
+    center_vertical = center_vertical,
+    center_horizontal = center_horizontal,
+    ids = ids, 
+    duration = duration
+  )
 
   is_running_golem <- runs_golem()
   
@@ -49,12 +59,14 @@ cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
 #' @inheritParams cleave
 #' 
 #' @export
-cleave_theme <- function(color = "red", bg_color = NULL, duration = .3, center = TRUE){
+cleave_theme <- function(color = "red", bg_color = NULL, duration = .3, center_vertical = TRUE,
+  center_horizontal = TRUE){
   options(
     CLEAVE_COLOR = color,
     CLEAVE_BG_COLOR = bg_color,
     CLEAVE_DURATION = duration,
-    CLEAVE_CENTER = center
+    CLEAVE_CENTER_VERTICAL = center_vertical,
+    CLEAVE_CENTER_HORIZONTAL = center_horizontal
   )
   invisible()
 }

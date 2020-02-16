@@ -4,7 +4,7 @@ Cleave will let you customise your Shiny error messages.
 
 ## Basics
 
-Include `use_sever` in your UI then use `cleave` in the server. The `cleave` function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting `center` to `FALSE`.
+Include `use_sever` in your UI then use `cleave` in the server. The `cleave` function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting `center_vertical` and `center_horizontal` to `FALSE`.
 
 ```r
 library(shiny)
@@ -170,7 +170,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output){
-  cleave(cl, color = "black", center = FALSE)
+  cleave(cl, color = "black", center_vertical = FALSE)
 
   # will generate an error
   output$plot <- renderPlot({

@@ -156,7 +156,7 @@
                 <h1 id="cleave">Cleave</h1>
 <p>Cleave will let you customise your Shiny error messages.</p>
 <h2 id="basics">Basics</h2>
-<p>Include <code>use_sever</code> in your UI then use <code>cleave</code> in the server. The <code>cleave</code> function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting <code>center</code> to <code>FALSE</code>.</p>
+<p>Include <code>use_sever</code> in your UI then use <code>cleave</code> in the server. The <code>cleave</code> function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting <code>center_vertical</code> and <code>center_horizontal</code> to <code>FALSE</code>.</p>
 <pre><code class="r">library(shiny)
 library(sever)
 
@@ -302,7 +302,7 @@ ui &lt;- fluidPage(
 )
 
 server &lt;- function(input, output){
-  cleave(cl, color = &quot;black&quot;, center = FALSE)
+  cleave(cl, color = &quot;black&quot;, center_vertical = FALSE)
 
   # will generate an error
   output$plot &lt;- renderPlot({

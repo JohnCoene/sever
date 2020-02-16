@@ -4,7 +4,13 @@
 \alias{cleave_theme}
 \title{Cleave Theme}
 \usage{
-cleave_theme(color = "red", bg_color = NULL, duration = 0.3, center = TRUE)
+cleave_theme(
+  color = "red",
+  bg_color = NULL,
+  duration = 0.3,
+  center_vertical = TRUE,
+  center_horizontal = TRUE
+)
 }
 \arguments{
 \item{color}{Color of error message text.}
@@ -14,7 +20,9 @@ If \code{NULL} will be transparent.}
 
 \item{duration}{Duration of animation showing the error message, set to \code{0} to have none.}
 
-\item{center}{Whether to center the message vertically and horizontally, a \code{boolean}.}
+\item{center_vertical}{Whether to center the message vertically and horizontally, a \code{boolean}.}
+
+\item{center_horizontal}{Whether to center the message vertically and horizontally, a \code{boolean}.}
 }
 \description{
 Define a theme to apply to all subsequent \code{\link{cleave}}.
