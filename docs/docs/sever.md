@@ -53,6 +53,8 @@ shinyApp(ui, server)
 
 ![](./img/sever_default_customised.png)
 
+You are by no means limited to customising the default, you can pass any HTML you like to the function.
+
 ``` r
 library(shiny)
 library(sever)
