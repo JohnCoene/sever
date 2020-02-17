@@ -1,4 +1,4 @@
-![](./img/logo.png)
+<img src="./img/logo.png" style="height:200px!important;" align="right">
 
 Good-looking problems: customise your Shiny disconnected screen and error messages.
 
