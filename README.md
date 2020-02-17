@@ -1,6 +1,6 @@
 <div align="center">
 
-![](./man/figures/logo.png)
+<img src="./man/figures/logo.png" height=200/>
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/JohnCoene/sever.svg?branch=master)](https://travis-ci.org/JohnCoene/sever)
