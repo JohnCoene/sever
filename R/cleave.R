@@ -59,7 +59,7 @@ cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
 #' @inheritParams cleave
 #' 
 #' @export
-cleave_theme <- function(color = "red", bg_color = NULL, duration = .3, center_vertical = TRUE,
+cleave_theme <- function(color = "red", bg_color = NULL, duration = .1, center_vertical = TRUE,
   center_horizontal = TRUE){
   options(
     CLEAVE_COLOR = color,

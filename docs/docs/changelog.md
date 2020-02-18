@@ -3,6 +3,7 @@
 ## sever 0.0.3
 
 - Changed cleave `center` argument to `center_horizontal` and `center_vertical` for more flexibility.
+- Change cleave appear animation speed.
 
 ## sever 0.0.2
 

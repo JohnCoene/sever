@@ -120,7 +120,7 @@ library(shiny)
 library(sever)
 
 # define theme
-cleave_theme(color = "white", bg_color = "black", duration = 1)
+cleave_theme(color = "white", bg_color = "black", duration = .15)
 
 ui <- fluidPage(
   use_sever(),

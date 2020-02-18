@@ -7,7 +7,7 @@
 cleave_theme(
   color = "red",
   bg_color = NULL,
-  duration = 0.3,
+  duration = 0.1,
   center_vertical = TRUE,
   center_horizontal = TRUE
 )
