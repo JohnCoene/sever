@@ -48,3 +48,17 @@ shinyApp(ui, server)
 ```
 
 ![](./img/example_02.png)
+
+## Frameworks
+
+If you are using another CSS/JavaScript framework, the sever button may not display correctly. You only need the button to trigger `location.reload();`
+
+```html
+<a onClick = 'location.reload();'></a>
+```
+
+Or in R.
+
+```r
+tags$a(onClick = "location.reload();")
+```

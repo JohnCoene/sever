@@ -90,6 +90,8 @@
         
             <li><a class="toctree-l4" href="#server-defined-variables">Server Defined Variables</a></li>
         
+            <li><a class="toctree-l4" href="#frameworks">Frameworks</a></li>
+        
         </ul>
     
 
@@ -190,6 +192,14 @@ shinyApp(ui, server)
 </code></pre>
 
 <p><img alt="" src="../img/example_02.png" /></p>
+<h2 id="frameworks">Frameworks</h2>
+<p>If you are using another CSS/JavaScript framework, the sever button may not display correctly. You only need the button to trigger <code>location.reload();</code></p>
+<pre><code class="html">&lt;a onClick = 'location.reload();'&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Or in R.</p>
+<pre><code class="r">tags$a(onClick = &quot;location.reload();&quot;)
+</code></pre>
               
             </div>
           </div>
