@@ -15,3 +15,5 @@ RoxygenNote: 7.0.2
 Imports:
   cli,
   shiny
+URL: http://sever.john-coene.com/
+BugReports: https://github.com/JohnCoene/sever/issues

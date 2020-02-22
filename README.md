@@ -11,6 +11,8 @@
 
 Good-looking problems: customise your Shiny disconnected screen and error messages.
 
+[Docs](https://sever.john-coene.com) | [Get Started](https://sever.john-coene.com/sever/)
+
 </div>
 
 ## Usage
