@@ -90,8 +90,6 @@
         
             <li><a class="toctree-l4" href="#server-defined-variables">Server Defined Variables</a></li>
         
-            <li><a class="toctree-l4" href="#hide-errors">Hide Errors</a></li>
-        
         </ul>
     
 
@@ -192,25 +190,6 @@ shinyApp(ui, server)
 </code></pre>
 
 <p><img alt="" src="../img/example_02.png" /></p>
-<h2 id="hide-errors">Hide Errors</h2>
-<p>You could use cleave to hide error messages though I'm unsure it's a good idea (fail loudly?).</p>
-<pre><code class="r">library(shiny)
-library(sever)
-
-ui &lt;- fluidPage(
-  use_sever(),
-  uiOutput(&quot;error&quot;)
-)
-
-server &lt;- function(input, output){
-
-  cleave(&quot;&quot;)
-
-  output$error &lt;- renderUI(error)
-}
-
-shinyApp(ui, server)
-</code></pre>
               
             </div>
           </div>
