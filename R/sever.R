@@ -72,10 +72,18 @@ sever <- function(html = sever_default(), color = "#fff", opacity = 1,
 
 #' Reload
 #' 
-#' Create a button to reload shiny.
+#' Create a button to reload/reconnect to shiny.
 #' 
 #' @param text The text to use on the button.
 #' @param class The class to apply to the button.
+#' @param color Color of button.
+#' 
+#' @section Functions:
+#' \itemize{
+#'  \item{\code{reload_button} - Returns a button.}
+#'  \item{\code{reload_link} - Returns a link.}
+#'  \item{\code{f7_reload_button} - A reload button for shinyMobile.}
+#' }
 #' 
 #' @rdname reload
 #' @export
@@ -91,6 +99,17 @@ reload_link <- function(text = "reload", class = c("default", "danger", "info", 
   class <- match.arg(class)
   class <- paste0("text-", class)
   tags$a(text, onClick = "location.reload();", class = class)
+}
+
+#' @rdname reload
+#' @export
+f7_reload_button <- function(text = "reload", color = "#000"){
+  shiny::tags$button(
+    text,
+    style = paste0("color:", color, ";background-color:#fff;"),
+    class = "button button-raised",
+    onClick = "location.reload();"
+  )
 }
 
 #' Default Sever Screen

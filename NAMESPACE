@@ -2,6 +2,7 @@
 
 export(cleave)
 export(cleave_theme)
+export(f7_reload_button)
 export(reload_button)
 export(reload_link)
 export(runs_golem)

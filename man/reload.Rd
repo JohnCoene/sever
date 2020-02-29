@@ -3,6 +3,7 @@
 \name{reload_button}
 \alias{reload_button}
 \alias{reload_link}
+\alias{f7_reload_button}
 \title{Reload}
 \usage{
 reload_button(
@@ -14,12 +15,25 @@ reload_link(
   text = "reload",
   class = c("default", "danger", "info", "success", "warning")
 )
+
+f7_reload_button(text = "reload", color = "#000")
 }
 \arguments{
 \item{text}{The text to use on the button.}
 
 \item{class}{The class to apply to the button.}
+
+\item{color}{Color of button.}
 }
 \description{
-Create a button to reload shiny.
+Create a button to reload/reconnect to shiny.
 }
+\section{Functions}{
+
+\itemize{
+\item{\code{reload_button} - Returns a button.}
+\item{\code{reload_link} - Returns a link.}
+\item{\code{f7_reload_button} - A reload button for shinyMobile.}
+}
+}
+
