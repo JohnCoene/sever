@@ -4,7 +4,7 @@ Shiny.addCustomMessageHandler('sever-it', function(opts) {
   $(document).on('shiny:disconnected', function(event) {
     remove_sever();
     chg_default(opts.bg_color, opts.opacity, opts.bg_image);
-    sever(opts.content, opts.color);
+    sever(opts.content, opts.color, opts.box);
   });
 
 });
@@ -32,21 +32,33 @@ function chg_default(bg_color, opacity, bg_image){
   }
 }
 
-function sever(content, color){
-  var dv = document.createElement("DIV");
+function sever(content, color, box){
+  // declare
+  var classes = "severed";
+  var dv = document.createElement("DIV"),
+      parent = document.createElement("DIV");
   
+  // insert content
   dv.innerHTML = content;
 
-  dv.className = "severed";
-  dv.style.zIndex = 99999999;
-  dv.style.textAlign = "center";
-  dv.style.position = "fixed";
-  dv.style.top = "50%";
-  dv.style.left = "50%";
-  dv.style.transform = "translate(-50%, -50%)";
-  dv.style.color = color;
+  // change classes if is box
+  if(box){
+    classes += " panel";
+    dv.className = "panel-body";
+  }
 
-  document.body.appendChild(dv);
+  parent.className = classes;
+  parent.style.zIndex = 99999999;
+  parent.style.textAlign = "center";
+  parent.style.position = "fixed";
+  parent.style.top = "50%";
+  parent.style.left = "50%";
+  parent.style.transform = "translate(-50%, -50%)";
+  parent.style.color = color;
+
+  parent.appendChild(dv);
+
+  document.body.appendChild(parent);
 }
 
 function remove_sever(){

@@ -1,21 +1,3 @@
-#' Dependnecies
-#' 
-#' Import dependencies, place this in your shiny UI.
-#' 
-#' @importFrom shiny tags singleton tagList
-#' 
-#' @name dependencies
-#' @export
-use_sever <- function(){
-  singleton(
-    tags$head(
-      tags$link(href = "sever-assets/style.css", rel = "stylesheet"),
-      tags$script(src = "sever-assets/sever.js"),
-      tags$script(src = "sever-assets/cleave.js")
-    )
-  )
-}
-
 #' Sever
 #' 
 #' Customise the Shiny disconnected screen.
@@ -26,6 +8,7 @@ use_sever <- function(){
 #' @param opacity Opacity of background. 
 #' @param bg_image Background image to use.
 #' @param session A valid shiny session.
+#' @param box Set to \code{TRUE} to enclose the \code{html} in a box.
 #' 
 #' @examples 
 #' library(shiny)
@@ -50,16 +33,16 @@ use_sever <- function(){
 #' @export
 sever <- function(html = sever_default(), color = "#fff", opacity = 1, 
   bg_color = "#333e48", bg_image = NULL, 
-  session = shiny::getDefaultReactiveDomain()){
+  session = shiny::getDefaultReactiveDomain(), box = FALSE){
 
   html <- as.character(html)
-
   msg <- list(
     content = html, 
     bg_color = bg_color, 
     color = color, 
     opacity = opacity,
-    bg_image = bg_image
+    bg_image = bg_image,
+    box = box
   )
 
   is_running_golem <- runs_golem()

@@ -108,3 +108,25 @@ shinyApp(ui, server)
 ```
 
 ![](./img/sever_img.png)
+
+## Box
+
+You can also have a box around your content, which may come in handy if you still want the background to be somewhat transparent.
+
+``` r
+library(shiny)
+library(sever)
+
+ui <- fluidPage(
+  use_sever(),
+  h1("sever")
+)
+
+server <- function(input, output){
+  sever(color = "black", bg_color = "rgba(0,0,0,.5)", box = TRUE)
+}
+
+shinyApp(ui, server)
+```
+
+![](./img/sever_box.png)

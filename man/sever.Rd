@@ -10,7 +10,8 @@ sever(
   opacity = 1,
   bg_color = "#333e48",
   bg_image = NULL,
-  session = shiny::getDefaultReactiveDomain()
+  session = shiny::getDefaultReactiveDomain(),
+  box = FALSE
 )
 }
 \arguments{
@@ -24,6 +25,8 @@ generally \link[shiny]{tagList}.}
 \item{bg_image}{Background image to use.}
 
 \item{session}{A valid shiny session.}
+
+\item{box}{Set to \code{TRUE} to enclose the \code{html} in a box.}
 }
 \description{
 Customise the Shiny disconnected screen.
