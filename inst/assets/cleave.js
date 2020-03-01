@@ -126,14 +126,14 @@ Shiny.addCustomMessageHandler('cleave-it', function(opts) {
     if(opts.bg_color == null)
       opts.bg_color = 'rgba(0,0,0,0)';
 
+    event.preventDefault();
+
     // apply to all 
     if(opts.ids == null){
-      event.preventDefault();
       cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
     } else { // apply to relevant ids
       opts.ids.forEach((value, index) => {
         if(opts.ids == event.name){
-          event.preventDefault();
           cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
         }
       });

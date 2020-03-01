@@ -84,6 +84,8 @@
         
             <li><a class="toctree-l4" href="#background-image">Background Image</a></li>
         
+            <li><a class="toctree-l4" href="#box">Box</a></li>
+        
         </ul>
     
 
@@ -242,6 +244,24 @@ shinyApp(ui, server)
 </code></pre>
 
 <p><img alt="" src="../img/sever_img.png" /></p>
+<h2 id="box">Box</h2>
+<p>You can also have a box around your content, which may come in handy if you still want the background to be somewhat transparent.</p>
+<pre><code class="r">library(shiny)
+library(sever)
+
+ui &lt;- fluidPage(
+  use_sever(),
+  h1(&quot;sever&quot;)
+)
+
+server &lt;- function(input, output){
+  sever(color = &quot;black&quot;, bg_color = &quot;rgba(0,0,0,.5)&quot;, box = TRUE)
+}
+
+shinyApp(ui, server)
+</code></pre>
+
+<p><img alt="" src="../img/sever_box.png" /></p>
               
             </div>
           </div>

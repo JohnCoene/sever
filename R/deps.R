@@ -1,9 +1,9 @@
 #' Dependnecies
-#' 
+#'
 #' Import dependencies, place this in your shiny UI.
-#' 
+#'
 #' @importFrom shiny tags singleton tagList
-#' 
+#'
 #' @name dependencies
 #' @export
 use_sever <- function(){
