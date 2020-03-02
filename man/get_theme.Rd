@@ -11,6 +11,9 @@ get_theme(option, value)
 
 \item{value}{Value to return if \code{value} is \code{NULL}.}
 }
+\value{
+A character string.
+}
 \description{
 Returns the \code{option} unless the \code{value} is set.
 }

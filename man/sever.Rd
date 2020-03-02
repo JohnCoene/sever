@@ -28,6 +28,9 @@ generally \link[shiny]{tagList}.}
 
 \item{box}{Set to \code{TRUE} to enclose the \code{html} in a box.}
 }
+\value{
+None
+}
 \description{
 Customise the Shiny disconnected screen.
 }

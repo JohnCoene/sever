@@ -32,6 +32,9 @@ If \code{NULL} will be transparent.}
 
 \item{session}{A valid shiny session.}
 }
+\value{
+None
+}
 \description{
 Customise error messages.
 }

@@ -5,6 +5,8 @@
 #' @param option Name of the theme option to fetch.
 #' @param value Value to return if \code{value} is \code{NULL}.
 #' 
+#' @return A character string.
+#' 
 #' @keywords internal
 get_theme <- function(option, value){
   if(is.null(value))

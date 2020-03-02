@@ -7,6 +7,9 @@
 \usage{
 use_sever()
 }
+\value{
+\link[shiny]{tags} containing the necessary dependencies.
+}
 \description{
 Import dependencies, place this in your shiny UI.
 }

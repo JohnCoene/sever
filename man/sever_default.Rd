@@ -18,6 +18,9 @@ sever_default(
 
 \item{button_class}{Class of button, passed to \code{\link{reload_button}}.}
 }
+\value{
+\link[shiny]{tags}.
+}
 \description{
 The default sever screen for convenience.
 }

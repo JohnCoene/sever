@@ -24,6 +24,9 @@ If \code{NULL} will be transparent.}
 
 \item{center_horizontal}{Whether to center the message vertically and horizontally, a \code{boolean}.}
 }
+\value{
+None
+}
 \description{
 Define a theme to apply to all subsequent \code{\link{cleave}}.
 }

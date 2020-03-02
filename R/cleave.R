@@ -12,6 +12,8 @@
 #' @param ids Ids of elements to apply the cleave to. If \code{NULL} applies to all error messages.
 #' @param duration Duration of animation showing the error message, set to \code{0} to have none.
 #' 
+#' @return None
+#' 
 #' @export
 cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, center_vertical = NULL,
   center_horizontal = NULL, ids = NULL, session = shiny::getDefaultReactiveDomain()){
@@ -57,6 +59,8 @@ cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
 #' Define a theme to apply to all subsequent \code{\link{cleave}}.
 #' 
 #' @inheritParams cleave
+#' 
+#' @return None
 #' 
 #' @export
 cleave_theme <- function(color = "red", bg_color = NULL, duration = .1, center_vertical = TRUE,

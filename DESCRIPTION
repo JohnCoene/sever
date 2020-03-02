@@ -1,12 +1,12 @@
 Package: sever
-Title: Customise 'Shiny' Disconnected Screen and Error Messages
+Title: Customise 'Shiny' Disconnected Screens and Error Messages
 Version: 0.0.4
 Authors@R: 
     person(given = "John",
            family = "Coene",
            role = c("aut", "cre"),
            email = "jcoenep@gmail.com")
-Description: Customise 'Shiny' disconnected screen and error messages.
+Description: Customise 'Shiny' disconnected screens as well as sanitize error messages to make them clearer and friendlier to the user.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

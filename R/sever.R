@@ -10,6 +10,8 @@
 #' @param session A valid shiny session.
 #' @param box Set to \code{TRUE} to enclose the \code{html} in a box.
 #' 
+#' @return None
+#' 
 #' @examples 
 #' library(shiny)
 #' 
@@ -68,6 +70,8 @@ sever <- function(html = sever_default(), color = "#fff", opacity = 1,
 #'  \item{\code{f7_reload_button} - A reload button for shinyMobile.}
 #' }
 #' 
+#' @return A button or link in the form of \link[shiny]{tags}.
+#' 
 #' @rdname reload
 #' @export
 reload_button <- function(text = "reload", class = c("default", "danger", "info", "success", "warning")){
@@ -102,6 +106,8 @@ f7_reload_button <- function(text = "reload", color = "#000"){
 #' @param title,subtitle Title and subtitle to display.
 #' @param button Text to display on button, passed to \code{\link{reload_button}}.
 #' @param button_class Class of button, passed to \code{\link{reload_button}}.
+#' 
+#' @return \link[shiny]{tags}.
 #' 
 #' @export
 sever_default <- function(title = "Whoops!", subtitle = "You have been disconnected", button = "Reload", button_class = "default"){
