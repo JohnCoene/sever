@@ -5,6 +5,7 @@
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/JohnCoene/sever.svg?branch=master)](https://travis-ci.org/JohnCoene/sever)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/JohnCoene/sever?branch=master&svg=true)](https://ci.appveyor.com/project/JohnCoene/sever)
+![R-CMD-check](https://github.com/JohnCoene/sever/workflows/R-CMD-check/badge.svg)
 [![CircleCI build status](https://circleci.com/gh/JohnCoene/sever.svg?style=svg)](https://circleci.com/gh/JohnCoene/sever)
 <!-- badges: end -->
 
