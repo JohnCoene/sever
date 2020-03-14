@@ -1,7 +1,7 @@
 ## Test environments
 
-* local R installation, R 3.6.2
-* ubuntu 16.04 (on travis-ci), R 3.6.2
+* local R installation (OS X & ubuntu 18.04), R 3.6.2
+* ubuntu 16.04 (on travis-ci), R 3.6.0
 * win-builder (devel)
 * r-hub (`check_for_cran`)
 
