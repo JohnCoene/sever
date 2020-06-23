@@ -16,7 +16,7 @@ sever(
 }
 \arguments{
 \item{html}{Shiny tags to use as content for the disconnected screen,
-generally \link[shiny]{tagList}.}
+generally \code{\link[shiny:tagList]{shiny::tagList()}}.}
 
 \item{opacity}{Opacity of background.}
 
