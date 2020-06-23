@@ -26,7 +26,7 @@ f7_reload_button(text = "reload", color = "#000")
 \item{color}{Color of button.}
 }
 \value{
-A button or link in the form of \code{\link[shiny:tags]{shiny::tags()}}.
+A button or link in the form of \code{shiny::tags}.
 }
 \description{
 Create a button to reload/reconnect to shiny.

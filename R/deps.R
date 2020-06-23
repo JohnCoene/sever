@@ -4,7 +4,7 @@
 #'
 #' @importFrom shiny tags singleton tagList
 #'
-#' @return [shiny::tags()] containing the necessary dependencies.
+#' @return \code{shiny::tags} containing the necessary dependencies.
 #' 
 #' @name dependencies
 #' @export

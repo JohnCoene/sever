@@ -1,7 +1,7 @@
 Package: sever
 Title: Customise 'Shiny' Disconnected Screens and Error Messages
 Version: 0.0.4
-Date: 2020-03-14
+Date: 2020-06-22
 Authors@R: 
     person(given = "John",
            family = "Coene",
