@@ -8,7 +8,13 @@ Good-looking problems: customise your Shiny disconnected screen and error messag
 
 ## Install
 
-Get it from Github with `remotes` or `devtools`:
+Install the stable version from CRAN:
+
+```r
+install.packages("sever")
+```
+
+Get the development version from Github with `remotes` or `devtools`:
 
 ```r
 # install.packages("remotes")

@@ -40,6 +40,12 @@ shinyApp(ui, server)
 
 ## Get it
 
+Get it from CRAN with:
+
+``` r
+install.packages("sever")
+```
+
 Install it from Github with:
 
 ``` r
