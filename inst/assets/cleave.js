@@ -131,9 +131,9 @@ Shiny.addCustomMessageHandler('cleave-it', function(opts) {
     // apply to all 
     if(opts.ids == null){
       cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
-    } else { // apply to relevant ids
+    } else { // apply to relevant ids) => {
       opts.ids.forEach((value, index) => {
-        if(opts.ids == event.name){
+        if(value == event.name){
           cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
         }
       });
