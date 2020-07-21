@@ -1,6 +1,6 @@
 # Changelog
 
-# sever 0.0.5.9000
+## sever 0.0.5.9000
 
 * Fix passing multiple ids to `cleave` see [#1](https://github.com/JohnCoene/sever/issues/1)
 
