@@ -12,6 +12,7 @@ cleave(
   center_vertical = NULL,
   center_horizontal = NULL,
   ids = NULL,
+  silent_errors = FALSE,
   session = shiny::getDefaultReactiveDomain()
 )
 }
@@ -29,6 +30,8 @@ If \code{NULL} will be transparent.}
 \item{center_vertical, center_horizontal}{Whether to center the message vertically and horizontally, a \code{boolean}.}
 
 \item{ids}{Ids of elements to apply the cleave to. If \code{NULL} applies to all error messages.}
+
+\item{silent_errors}{Set to TRUE to also cleave silent errors: errors that are raised by \code{shiny::validate}.}
 
 \item{session}{A valid shiny session.}
 }

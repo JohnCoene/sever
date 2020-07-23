@@ -11,12 +11,13 @@
 #' @param session A valid shiny session.
 #' @param ids Ids of elements to apply the cleave to. If \code{NULL} applies to all error messages.
 #' @param duration Duration of animation showing the error message, set to \code{0} to have none.
+#' @param silent_errors Set to TRUE to also cleave silent errors: errors that are raised by \code{shiny::validate}.
 #' 
 #' @return None
 #' 
 #' @export
 cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, center_vertical = NULL,
-  center_horizontal = NULL, ids = NULL, session = shiny::getDefaultReactiveDomain()){
+  center_horizontal = NULL, ids = NULL, silent_errors = FALSE, session = shiny::getDefaultReactiveDomain()){
 
   if(!is.null(html)){
 
@@ -43,7 +44,8 @@ cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
     center_vertical = center_vertical,
     center_horizontal = center_horizontal,
     ids = ids, 
-    duration = duration
+    duration = duration,
+    silent_errors = silent_errors
   )
 
   is_running_golem <- runs_golem()

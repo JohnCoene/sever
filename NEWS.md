@@ -2,6 +2,7 @@
 
 * Fix passing multiple ids to `cleave` see [#1](https://github.com/JohnCoene/sever/issues/1)
 * Fix to remove cleave error on new value render + empty HTML content on error, see [#2](https://github.com/JohnCoene/sever/issues/2).
+* Allow controlling whether silent errors (raised by `validate`) are displayed natively or with cleave, see [#2](https://github.com/JohnCoene/sever/issues/2).
 
 # sever 0.0.4
 

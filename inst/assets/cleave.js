@@ -121,19 +121,25 @@ Shiny.addCustomMessageHandler('cleave-it', function(opts) {
 
   $(document).on('shiny:error', function(event) {
 
+    if(!opts.silent_errors && event.error.type != null)
+      return;
+
+    event.preventDefault();
+
     if(opts.html == null)
       opts.html = '<span>' + event.error.message + '</span>';
 
     if(opts.bg_color == null)
       opts.bg_color = 'rgba(0,0,0,0)';
 
-    event.preventDefault();
-
     // apply to all 
     if(opts.ids == null){
+
       cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
+    
     } else { // apply to relevant ids) => {
       opts.ids.forEach((value, index) => {
+
         if(value == event.name){
           cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
         }
