@@ -112,6 +112,7 @@ function cleave(id, html, color, bg_color, duration, center_vertical, center_hor
   overlay.appendChild(overlay_content);
 
   // append overlay to dom
+  dom.innerHTML = '';
   dom.appendChild(overlay);
   
 }
@@ -135,6 +136,19 @@ Shiny.addCustomMessageHandler('cleave-it', function(opts) {
       opts.ids.forEach((value, index) => {
         if(value == event.name){
           cleave(event.name, opts.html, opts.color, opts.bg_color, opts.duration, opts.center_vertical, opts.center_horizontal)
+        }
+      });
+    }
+  });
+
+  $(document).on('shiny:value shiny:outputinvalidated', function(event){
+    if(opts.ids == null){
+      $('.cleave-overlay').remove();
+    } else { // apply to relevant ids) => {
+      opts.ids.forEach((value, index) => {
+        if(value == event.name){
+          let selector = '#' + event.name + '>.cleave-overlay';
+          $(selector).remove();
         }
       });
     }
