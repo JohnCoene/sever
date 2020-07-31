@@ -14,9 +14,9 @@ sever_default(
 \arguments{
 \item{title, subtitle}{Title and subtitle to display.}
 
-\item{button}{Text to display on button, passed to \code{\link{reload_button}}.}
+\item{button}{Text to display on button, passed to \code{\link[=reload_button]{reload_button()}}.}
 
-\item{button_class}{Class of button, passed to \code{\link{reload_button}}.}
+\item{button_class}{Class of button, passed to \code{\link[=reload_button]{reload_button()}}.}
 }
 \value{
 \code{shiny::tags}.

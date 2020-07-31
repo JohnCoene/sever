@@ -31,7 +31,8 @@ If \code{NULL} will be transparent.}
 
 \item{ids}{Ids of elements to apply the cleave to. If \code{NULL} applies to all error messages.}
 
-\item{silent_errors}{Set to TRUE to also cleave silent errors: errors that are raised by \code{shiny::validate}.}
+\item{silent_errors}{Set to TRUE to also cleave silent errors: errors that are raised by \code{\link[shiny:validate]{shiny::validate()}}.
+Alternatively you might want to use \code{\link[=chisel]{chisel()}} to specifically stylise those messages.}
 
 \item{session}{A valid shiny session.}
 }
@@ -39,5 +40,8 @@ If \code{NULL} will be transparent.}
 None
 }
 \description{
-Customise error messages.
+Customise hard error messages.
+}
+\seealso{
+\code{\link[=chisel]{chisel()}} for soft error messages.
 }

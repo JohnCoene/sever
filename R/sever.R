@@ -3,12 +3,12 @@
 #' Customise the Shiny disconnected screen.
 #' 
 #' @param html Shiny tags to use as content for the disconnected screen,
-#' generally \code{shiny::tagList()}.
+#' generally [shiny::tagList()].
 #' @param bg_color,color Background color, color of text.
 #' @param opacity Opacity of background. 
 #' @param bg_image Background image to use.
 #' @param session A valid shiny session.
-#' @param box Set to \code{TRUE} to enclose the \code{html} in a box.
+#' @param box Set to `TRUE` to enclose the `html` in a box.
 #' 
 #' @return None
 #' 
@@ -65,12 +65,12 @@ sever <- function(html = sever_default(), color = "#fff", opacity = 1,
 #' 
 #' @section Functions:
 #' \itemize{
-#'  \item{\code{reload_button} - Returns a button.}
-#'  \item{\code{reload_link} - Returns a link.}
-#'  \item{\code{f7_reload_button} - A reload button for shinyMobile.}
+#'  \item{`reload_button` - Returns a button.}
+#'  \item{`reload_link` - Returns a link.}
+#'  \item{`f7_reload_button` - A reload button for shinyMobile.}
 #' }
 #' 
-#' @return A button or link in the form of \code{shiny::tags}.
+#' @return A button or link in the form of [shiny::tags].
 #' 
 #' @rdname reload
 #' @export
@@ -104,8 +104,8 @@ f7_reload_button <- function(text = "reload", color = "#000"){
 #' The default sever screen for convenience.
 #' 
 #' @param title,subtitle Title and subtitle to display.
-#' @param button Text to display on button, passed to \code{\link{reload_button}}.
-#' @param button_class Class of button, passed to \code{\link{reload_button}}.
+#' @param button Text to display on button, passed to [reload_button()].
+#' @param button_class Class of button, passed to [reload_button()].
 #' 
 #' @return \code{shiny::tags}.
 #' 
