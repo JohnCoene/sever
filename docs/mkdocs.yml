@@ -9,13 +9,15 @@ extra_css:
     - css/style.css
 nav:
     - Home: index.md
-    - User Guide: 
+    - Features: 
         - Sever: sever.md
         - Cleave: cleave.md
         - Chisel: chisel.md
-    - Examples: examples.md
-    - Changelog: changelog.md
-    - License: license.md
+    - User Guide: 
+        - Advanced: examples.md
+    - Info: 
+      - Changelog: changelog.md
+      - License: license.md
 theme: 
   name: readthedocs
   hljs_style: dark
