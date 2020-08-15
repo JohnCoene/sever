@@ -3,6 +3,12 @@
   display: none !important;
 }
 
+#shiny-disconnected-overlay{
+  cursor: not-allowed !important;
+  z-index: 999999!;
+  background-size: cover;
+}
+
 @keyframes expand {
   from {
     transform: scale(.5);

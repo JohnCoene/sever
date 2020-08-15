@@ -12,7 +12,8 @@ nav:
     - User Guide: 
         - Sever: sever.md
         - Cleave: cleave.md
-        - Examples: examples.md
+        - Chisel: chisel.md
+    - Examples: examples.md
     - Changelog: changelog.md
     - License: license.md
 theme: 
