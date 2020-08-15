@@ -25,7 +25,8 @@ remotes::install_github("JohnCoene/sever")
 
 1. Place `use_sever()` in your Shiny UI.
 2. Use `sever()` to customise the disconnected screen.
-3. Use `cleave()` to customise error messages. 
+3. Use `cleave()` to customise _hard_ error messages. 
+4. Use `chisel()` to customise _soft_ error messages. 
 
 ## Example
 
