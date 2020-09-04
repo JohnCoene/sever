@@ -68,7 +68,8 @@ function rupture(opts){
 
 window.unrupt = function(){
   remove_rupture();
-  Shiny.shinyapp.reconnect();
+  if(!Shiny.shinyapp.isConnected())
+    Shiny.shinyapp.reconnect();
 }
 
 function remove_rupture(){
