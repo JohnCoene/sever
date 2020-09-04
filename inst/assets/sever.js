@@ -1,4 +1,3 @@
-
 Shiny.addCustomMessageHandler('sever-it', function(opts) {
 
   $(document).on('shiny:disconnected', function(event) {
