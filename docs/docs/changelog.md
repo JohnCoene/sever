@@ -1,6 +1,10 @@
 # Changelog
 
-## sever 0.0.5.9000
+# sever 0.0.6.9000
+
+- Added `rupture` to display a disconnected message after the user has been idle for a while.
+
+## sever 0.0.5
 
 * Fix passing multiple ids to `cleave` see [#1](https://github.com/JohnCoene/sever/issues/1)
 * Fix to remove cleave error on new value render + empty HTML content on error, see [#2](https://github.com/JohnCoene/sever/issues/2).

@@ -9,7 +9,7 @@
   <meta name="author" content="John Coene">
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Changelog - sever</title>
+  <title>Rupture - sever</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Changelog";
-    var mkdocs_page_input_path = "changelog.md";
+    var mkdocs_page_name = "Rupture";
+    var mkdocs_page_input_path = "rupture.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -64,14 +64,16 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Features</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../sever/">Sever</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../cleave/">Cleave</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../chisel/">Chisel</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../rupture/">Rupture</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Rupture</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">User Guide</span></p>
@@ -80,10 +82,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Info</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Changelog</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
                     </li>
@@ -109,14 +109,14 @@
     
       
         
-          <li>Info &raquo;</li>
+          <li>Features &raquo;</li>
         
       
     
-    <li>Changelog</li>
+    <li>Rupture</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/JohnCoene/sever/edit/master/docs/docs/changelog.md"
+        <a href="https://github.com/JohnCoene/sever/edit/master/docs/docs/rupture.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -127,39 +127,27 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="changelog">Changelog</h1>
-<h1 id="sever-0069000">sever 0.0.6.9000</h1>
-<ul>
-<li>Added <code>rupture</code> to display a disconnected message after the user has been idle for a while.</li>
-</ul>
-<h2 id="sever-005">sever 0.0.5</h2>
-<ul>
-<li>Fix passing multiple ids to <code>cleave</code> see <a href="https://github.com/JohnCoene/sever/issues/1">#1</a></li>
-<li>Fix to remove cleave error on new value render + empty HTML content on error, see <a href="https://github.com/JohnCoene/sever/issues/2">#2</a>.</li>
-<li>Add <code>chisel</code> to style soft error messages, those raised by <code>validate</code>.</li>
-</ul>
-<h2 id="sever-004">sever 0.0.4</h2>
-<p>Initial CRAN version.</p>
-<h2 id="sever-003">sever 0.0.3</h2>
-<ul>
-<li>Changed cleave <code>center</code> argument to <code>center_horizontal</code> and <code>center_vertical</code> for more flexibility.</li>
-<li>Change cleave appear animation speed.</li>
-</ul>
-<h2 id="sever-002">sever 0.0.2</h2>
-<ul>
-<li>Added <code>cleave</code> to customise error messages!</li>
-<li>Created website</li>
-<li>Ensure a single severed screen is present at any one time.</li>
-<li>Check if <code>golem.app.prod</code> option is set to keep functions from running if in dev mode to allow debugging, runs in prod. If not set runs functions as expected.</li>
-<li>Added <code>bg_image</code> argument to <code>sever</code> function.</li>
-</ul>
-<h2 id="sever-001">sever 0.0.1</h2>
-<ul>
-<li><code>sever_default</code> A default sever screen.</li>
-<li>Simplified <code>sever</code> function: change three-dots to <code>html</code> argument which takes <code>sever_default</code>.</li>
-</ul>
-<h2 id="sever-0019000">sever 0.0.1.9000</h2>
-<p>Initial dev version.</p>
+                <h1 id="rupture">Rupture</h1>
+<p>The <code>rupture</code> function allows displaying an screen: a screen that appears after the user has been idle for <code>ms</code> milliseconds.</p>
+<pre><code class="r">library(shiny)
+library(sever)
+
+ui &lt;- fluidPage(
+ use_sever(),
+ h1(&quot;rupture&quot;),
+ p(&quot;Wait for idle screen&quot;)
+)
+
+server &lt;- function(input, output){
+  # set ms to 5 seconds for test
+ rupture(ms = 5000)
+}
+
+shinyApp(ui, server)
+</code></pre>
+
+<p><img alt="" src="../img/sever_example.png" /></p>
+<p>This consists of a new family of functions mirroring that of <code>sever</code> which work exactly the same way.</p>
               
             </div>
           </div>
@@ -167,10 +155,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../license/" class="btn btn-neutral float-right" title="License">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../examples/" class="btn btn-neutral float-right" title="Advanced">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../examples/" class="btn btn-neutral" title="Advanced"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../chisel/" class="btn btn-neutral" title="Chisel"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -198,10 +186,10 @@
           <a href="https://github.com/JohnCoene/sever/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../examples/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../chisel/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../license/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../examples/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

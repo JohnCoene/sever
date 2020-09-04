@@ -27,6 +27,7 @@ remotes::install_github("JohnCoene/sever")
 2. Use `sever()` to customise the disconnected screen.
 3. Use `cleave()` to customise _hard_ error messages. 
 4. Use `chisel()` to customise _soft_ error messages. 
+6. Use `rupture()` to show an idle screen. 
 
 ## Example
 
