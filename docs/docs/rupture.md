@@ -1,6 +1,6 @@
 # Rupture
 
-The `rupture` function allows displaying an screen: a screen that appears after the user has been idle for `ms` milliseconds.
+The `rupture` function allows displaying a screen that appears after the user has been idle for `ms` milliseconds.
 
 ``` r
 library(shiny)
