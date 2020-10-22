@@ -11,6 +11,7 @@
 #' @param box Set to `TRUE` to enclose the `html` in a box.
 #' @param ms Milliseconds before showing the disconnected screen,
 #' defaults to `1000 * 60 * 15` which is 15 minutes (same as shinyapps.io).
+#' @param callback_name Name of shiny input event is sent to.
 #' 
 #' @return None
 #' 
