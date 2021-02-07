@@ -1,4 +1,4 @@
-# sever 0.0.6.9000
+# sever 0.0.6
 
 - Added `rupture` to display a disconnected message after the user has been idle for a while.
 

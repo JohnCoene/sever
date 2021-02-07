@@ -12,11 +12,16 @@ library(sever)
 
 ui <- fluidPage(
   use_sever(),
-  h1("sever")
+  h1("sever"),
+  actionButton("stop", "Stop App")
 )
 
 server <- function(input, output){
   sever()
+
+  observeEvent(input$stop, {
+    stopApp()
+  })
 }
 
 shinyApp(ui, server)
