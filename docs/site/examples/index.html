@@ -136,7 +136,7 @@
                 <h1 id="examples">Examples</h1>
 <h2 id="combine">Combine</h2>
 <p>You can of course combine sever and cleave.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
@@ -153,10 +153,9 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <h2 id="server-defined-variables">Server Defined Variables</h2>
 <p>You can use variables defined server-side to deliver for informative messages.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
@@ -174,15 +173,13 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/example_02.png" /></p>
 <h2 id="frameworks">Frameworks</h2>
 <p>If you are using another CSS/JavaScript framework, the sever button may not display correctly. You only need the button to trigger <code>location.reload();</code></p>
-<pre><code class="html">&lt;a onClick = 'location.reload();'&gt;&lt;/a&gt;
+<pre><code class="language-html">&lt;a onClick = 'location.reload();'&gt;&lt;/a&gt;
 </code></pre>
-
 <p>Or in R.</p>
-<pre><code class="r">tags$a(onClick = &quot;location.reload();&quot;)
+<pre><code class="language-r">tags$a(onClick = &quot;location.reload();&quot;)
 </code></pre>
               
             </div>

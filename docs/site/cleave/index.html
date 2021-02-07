@@ -141,7 +141,7 @@
 <p>Cleave will let you customise your Shiny error messages.</p>
 <h2 id="basics">Basics</h2>
 <p>Include <code>use_sever</code> in your UI then use <code>cleave</code> in the server. The <code>cleave</code> function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting <code>center_vertical</code> and <code>center_horizontal</code> to <code>FALSE</code>.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
@@ -167,12 +167,11 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p>By default not much changes.</p>
 <p><img alt="" src="../img/cleave_simple.png" /></p>
 <h2 id="single-message">Single Message</h2>
 <p>The first element of the <code>cleave</code> function lets you specify a different error message. You can also customise the text and background color.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
@@ -202,11 +201,10 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/cleave_1.png" /></p>
 <h2 id="multiple-messages">Multiple Messages</h2>
 <p>You can also specify a list of ids of elements to which the <code>cleave</code> should apply, then of course you can use multiple <code>cleave</code> in a single app.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
@@ -233,11 +231,10 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/cleave_custom.png" /></p>
 <h2 id="theme">Theme</h2>
 <p>You can set a theme for all your <code>cleave</code> to avoid repeating arguments and ensure all errors have a consistent look. This can be done inside or outside the server function. Notice the <code>duration</code> argument to change the duration of the animation, set to 0 to have none.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 # define theme
@@ -267,11 +264,10 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/cleave.gif" /></p>
 <h2 id="be-creative">Be Creative</h2>
 <p>The cleave function accepts any valid html, be creative.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 cl &lt;- tagList(
@@ -296,7 +292,6 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/cleave_hadley.gif" /></p>
               
             </div>

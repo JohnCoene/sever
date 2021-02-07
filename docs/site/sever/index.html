@@ -139,25 +139,29 @@
 <p>Sever will let you customise the Shiny disconnected screen.</p>
 <h2 id="basics">Basics</h2>
 <p>Include dependencies with <code>use_sever</code> then use the <code>sever</code> function to customise the screen, launch the app and stop the server to see the customised screen.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
   use_sever(),
-  h1(&quot;sever&quot;)
+  h1(&quot;sever&quot;),
+  actionButton(&quot;stop&quot;, &quot;Stop App&quot;)
 )
 
 server &lt;- function(input, output){
   sever()
+
+  observeEvent(input$stop, {
+    stopApp()
+  })
 }
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/sever_example.png" /></p>
 <h2 id="customise">Customise</h2>
 <p>The first argument of the <code>sever</code>function (<code>html</code>) is used to specify the html to be displayed on the disconnected screen and defaults to <code>sever_default</code>; you can of course change that behaviour. You can customise the default to some extend.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 disconnected &lt;- sever_default(
@@ -178,10 +182,9 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/sever_default_customised.png" /></p>
 <p>You are by no means limited to customising the default, you can pass any HTML you like to the function.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 disconnected &lt;- tagList(
@@ -201,12 +204,11 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/sever_example2.png" /></p>
 <p>If you want to even further customise the screen with CSS; it is assigned the <code>severed</code> CSS class.</p>
 <h2 id="background-image">Background Image</h2>
 <p>You can also use a background image.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 img &lt;- paste0(
@@ -226,11 +228,10 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/sever_img.png" /></p>
 <h2 id="box">Box</h2>
 <p>You can also have a box around your content, which may come in handy if you still want the background to be somewhat transparent.</p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
@@ -244,7 +245,6 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p><img alt="" src="../img/sever_box.png" /></p>
               
             </div>

@@ -129,7 +129,7 @@
               
                 <h1 id="chisel">Chisel</h1>
 <p>The latest version of sever adds a <code>chisel</code> function which changes error messages raised by <code>validate</code> and <code>need</code>. These are referred to as "silent errors." This is useful if one also wants to apply styling to those softer errors. </p>
-<pre><code class="r">library(shiny)
+<pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
@@ -161,7 +161,6 @@ server &lt;- function(input, output){
 
 shinyApp(ui, server)
 </code></pre>
-
 <p>Note that one can also have these with <code>cleave</code> but then both hard and silent errors will have the same styling: <code>cleave(silent_errors = TRUE)</code>.</p>
               
             </div>
