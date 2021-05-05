@@ -1,5 +1,9 @@
 # Changelog
 
+# sever 0.0.7.9000
+
+- Fix image background [#8](https://github.com/JohnCoene/sever/issues/8)
+
 # sever 0.0.6
 
 - Added `rupture` to display a disconnected message after the user has been idle for a while.
