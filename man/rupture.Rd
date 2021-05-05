@@ -12,7 +12,8 @@ rupture(
   bg_image = NULL,
   ms = 1000 * 60 * 15,
   session = shiny::getDefaultReactiveDomain(),
-  box = FALSE
+  box = FALSE,
+  callback_name="ruptured"
 )
 }
 \arguments{
@@ -31,6 +32,7 @@ defaults to \code{1000 * 60 * 15} which is 15 minutes (same as shinyapps.io).}
 \item{session}{A valid shiny session.}
 
 \item{box}{Set to \code{TRUE} to enclose the \code{html} in a box.}
+\item{callback_name}{Name of shiny input event is sent to.}
 }
 \value{
 None

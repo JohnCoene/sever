@@ -9,6 +9,7 @@ function watchActivity(opts) {
 
   function logout() {
     rupture(opts);
+    Shiny.setInputValue(opts.callback_name, true)
   }
 
   function resetTimer() {

@@ -11,6 +11,7 @@
 #' @param box Set to `TRUE` to enclose the `html` in a box.
 #' @param ms Milliseconds before showing the disconnected screen,
 #' defaults to `1000 * 60 * 15` which is 15 minutes (same as shinyapps.io).
+#' @param callback_name Name of shiny input event is sent to.
 #' 
 #' @return None
 #' 
@@ -37,7 +38,8 @@
 #' @export
 rupture <- function(html = rupture_default(), color = "#fff", opacity = 1, 
   bg_color = "#333e48", bg_image = NULL, ms = 1000 * 60 * 15,
-  session = shiny::getDefaultReactiveDomain(), box = FALSE){
+  session = shiny::getDefaultReactiveDomain(), box = FALSE, 
+  callback_name="ruptured"){
 
   html <- as.character(html)
   msg <- list(
@@ -47,7 +49,8 @@ rupture <- function(html = rupture_default(), color = "#fff", opacity = 1,
     opacity = opacity,
     bg_image = bg_image,
     box = box,
-    ms = ms
+    ms = ms,
+    callback_name = callback_name
   )
 
   session$sendCustomMessage("rupture-it", msg)
