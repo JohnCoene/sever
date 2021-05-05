@@ -1,5 +1,4 @@
 function watchActivity(opts) {
-  console.log(opts);
   var t = setTimeout(logout, opts.ms);
   window.onmousemove = resetTimer; // catches mouse movements
   window.onmousedown = resetTimer; // catches mouse movements
@@ -43,7 +42,7 @@ function rupture(opts){
   bg.style.opacity = opts.opacity;
   bg.style.zIndex = 99999998;
   if(opts.bg_image)
-    bg.style.backgroundImage = url(opts.bg_image);
+    bg.style.backgroundImage = "url(" + opts.bg_image + ")";
 
   // change classes if is box
   if(opts.box){
