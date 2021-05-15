@@ -19,8 +19,17 @@
 #' @seealso [chisel()] for soft error messages.
 #' 
 #' @export
-cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, center_vertical = NULL,
-  center_horizontal = NULL, ids = NULL, silent_errors = FALSE, session = shiny::getDefaultReactiveDomain()){
+cleave <- function(
+  html = NULL, 
+  color = NULL, 
+  bg_color = NULL, 
+  duration = NULL, 
+  center_vertical = NULL,
+  center_horizontal = NULL, 
+  ids = NULL, 
+  silent_errors = FALSE, 
+  session = shiny::getDefaultReactiveDomain()
+){
 
   if(!is.null(html)){
 
@@ -68,8 +77,13 @@ cleave <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
 #' @return None
 #' 
 #' @export
-cleave_theme <- function(color = "red", bg_color = NULL, duration = .1, center_vertical = TRUE,
-  center_horizontal = TRUE){
+cleave_theme <- function(
+  color = "red", 
+  bg_color = NULL, 
+  duration = .1, 
+  center_vertical = TRUE,
+  center_horizontal = TRUE
+){
   options(
     CLEAVE_COLOR = color,
     CLEAVE_BG_COLOR = bg_color,

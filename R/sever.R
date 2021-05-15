@@ -33,9 +33,15 @@
 #'  shinyApp(ui, server)
 #' 
 #' @export
-sever <- function(html = sever_default(), color = "#fff", opacity = 1, 
-  bg_color = "#333e48", bg_image = NULL, 
-  session = shiny::getDefaultReactiveDomain(), box = FALSE){
+sever <- function(
+  html = sever_default(), 
+  color = "#fff", 
+  opacity = 1, 
+  bg_color = "#333e48", 
+  bg_image = NULL, 
+  session = shiny::getDefaultReactiveDomain(), 
+  box = FALSE
+){
 
   html <- as.character(html)
   msg <- list(
@@ -74,7 +80,10 @@ sever <- function(html = sever_default(), color = "#fff", opacity = 1,
 #' 
 #' @rdname reload
 #' @export
-reload_button <- function(text = "reload", class = c("default", "danger", "info", "success", "warning")){
+reload_button <- function(
+  text = "reload", 
+  class = c("default", "danger", "info", "success", "warning")
+){
   class <- match.arg(class)
   class <- paste0("btn btn-", class)
   tags$button(text, onClick = "location.reload();", class = class)
@@ -82,7 +91,10 @@ reload_button <- function(text = "reload", class = c("default", "danger", "info"
 
 #' @rdname reload
 #' @export
-reload_link <- function(text = "reload", class = c("default", "danger", "info", "success", "warning")){
+reload_link <- function(
+  text = "reload", 
+  class = c("default", "danger", "info", "success", "warning")
+){
   class <- match.arg(class)
   class <- paste0("text-", class)
   tags$a(text, onClick = "location.reload();", class = class)
@@ -90,7 +102,10 @@ reload_link <- function(text = "reload", class = c("default", "danger", "info", 
 
 #' @rdname reload
 #' @export
-f7_reload_button <- function(text = "reload", color = "#000"){
+f7_reload_button <- function(
+  text = "reload", 
+  color = "#000"
+){
   shiny::tags$button(
     text,
     style = paste0("color:", color, ";background-color:#fff;"),
@@ -110,7 +125,12 @@ f7_reload_button <- function(text = "reload", color = "#000"){
 #' @return \code{shiny::tags}.
 #' 
 #' @export
-sever_default <- function(title = "Whoops!", subtitle = "You have been disconnected", button = "Reload", button_class = "default"){
+sever_default <- function(
+  title = "Whoops!", 
+  subtitle = "You have been disconnected", 
+  button = "Reload", 
+  button_class = "default"
+){
   tagList(
     tags$h1(title),
     tags$p(subtitle),

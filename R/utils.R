@@ -8,7 +8,10 @@
 #' @return A character string.
 #' 
 #' @keywords internal
-get_theme <- function(option, value){
+get_theme <- function(
+  option, 
+  value
+){
   if(is.null(value))
     value <- getOption(option)
   

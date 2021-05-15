@@ -35,9 +35,16 @@
 #'  shinyApp(ui, server)
 #' 
 #' @export
-rupture <- function(html = rupture_default(), color = "#fff", opacity = 1, 
-  bg_color = "#333e48", bg_image = NULL, ms = 1000 * 60 * 15,
-  session = shiny::getDefaultReactiveDomain(), box = FALSE){
+rupture <- function(
+  html = rupture_default(), 
+  color = "#fff", 
+  opacity = 1, 
+  bg_color = "#333e48", 
+  bg_image = NULL, 
+  ms = 1000 * 60 * 15,
+  session = shiny::getDefaultReactiveDomain(), 
+  box = FALSE
+){
 
   html <- as.character(html)
   msg <- list(
@@ -72,7 +79,10 @@ rupture <- function(html = rupture_default(), color = "#fff", opacity = 1,
 #' 
 #' @name reconnect
 #' @export
-reconnect_button <- function(text = "reconnect", class = c("default", "danger", "info", "success", "warning")){
+reconnect_button <- function(
+  text = "reconnect", 
+  class = c("default", "danger", "info", "success", "warning")
+){
   class <- match.arg(class)
   class <- paste0("btn btn-", class)
   tags$button(text, onClick = "window.unrupt();", class = class)
@@ -80,7 +90,10 @@ reconnect_button <- function(text = "reconnect", class = c("default", "danger", 
 
 #' @rdname reconnect
 #' @export
-reconnect_link <- function(text = "reconnect", class = c("default", "danger", "info", "success", "warning")){
+reconnect_link <- function(
+  text = "reconnect", 
+  class = c("default", "danger", "info", "success", "warning")
+){
   class <- match.arg(class)
   class <- paste0("text-", class)
   tags$a(text, onClick = "window.unrupt();", class = class)
@@ -88,7 +101,10 @@ reconnect_link <- function(text = "reconnect", class = c("default", "danger", "i
 
 #' @rdname reconnect
 #' @export
-f7_reconnect_button <- function(text = "reconnect", color = "#000"){
+f7_reconnect_button <- function(
+  text = "reconnect", 
+  color = "#000"
+){
   shiny::tags$button(
     text,
     style = paste0("color:", color, ";background-color:#fff;"),
@@ -106,7 +122,12 @@ f7_reconnect_button <- function(text = "reconnect", color = "#000"){
 #' @return \code{shiny::tags}.
 #' 
 #' @export
-rupture_default <- function(title = "Idle", subtitle = "Your session is disconnected", button = "Reconnect", button_class = "default"){
+rupture_default <- function(
+  title = "Idle", 
+  subtitle = "Your session is disconnected", 
+  button = "Reconnect", 
+  button_class = "default"
+){
   tagList(
     tags$h1(title),
     tags$p(subtitle),

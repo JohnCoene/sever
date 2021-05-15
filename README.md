@@ -25,12 +25,12 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  use_sever(), # import dependencies
   h1("sever")
 )
 
 server <- function(input, output){
-  sever()
+  sever() # customise
 }
 
 shinyApp(ui, server)

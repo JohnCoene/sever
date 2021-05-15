@@ -8,8 +8,16 @@
 #' @return None
 #' 
 #' @export
-chisel <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, center_vertical = NULL,
-  center_horizontal = NULL, ids = NULL, session = shiny::getDefaultReactiveDomain()){
+chisel <- function(
+  html = NULL, 
+  color = NULL, 
+  bg_color = NULL, 
+  duration = NULL, 
+  center_vertical = NULL,
+  center_horizontal = NULL, 
+  ids = NULL, 
+  session = shiny::getDefaultReactiveDomain()
+){
 
   if(!is.null(html)){
 
@@ -56,8 +64,13 @@ chisel <- function(html = NULL, color = NULL, bg_color = NULL, duration = NULL, 
 #' @return None
 #' 
 #' @export
-chisel_theme <- function(color = "darkgrey", bg_color = NULL, duration = .1, center_vertical = TRUE,
-  center_horizontal = TRUE){
+chisel_theme <- function(
+  color = "darkgrey", 
+  bg_color = NULL, 
+  duration = .1, 
+  center_vertical = TRUE,
+  center_horizontal = TRUE
+){
   options(
     CHISEL_COLOR = color,
     CHISEL_BG_COLOR = bg_color,
