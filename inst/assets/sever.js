@@ -18,7 +18,7 @@ function chg_default(bg_color, opacity, bg_image){
   if(bg_color == undefined)
     bg_color = "none";
 
-  css = "#shiny-disconnected-overlay{background-color: " + bg_color + "; opacity: " + opacity + "; background-size: cover; background-image: url('" + bg_image + "')}";
+  css = "#shiny-disconnected-overlay{background-color: " + bg_color + "; opacity: " + opacity + "; background-size: cover; background-image: url('" + bg_image + "'); z-index: 99999998}";
 
   head.appendChild(style);
 
