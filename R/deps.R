@@ -1,20 +1,27 @@
-#' Dependnecies
+#' Dependencies
 #'
 #' Import dependencies, place this in your shiny UI.
 #'
-#' @importFrom shiny tags singleton tagList
+#' @importFrom htmltools htmlDependency tagList
+#' @importFrom shiny tags
 #'
 #' @return [shiny::tags] containing the necessary dependencies.
 #' 
 #' @name dependencies
 #' @export
-use_sever <- function(){
-  singleton(
-    tags$head(
-      tags$link(href = "sever-assets/style.css", rel = "stylesheet"),
-      tags$script(src = "sever-assets/sever.js"),
-      tags$script(src = "sever-assets/rupture.js"),
-      tags$script(src = "sever-assets/cleave.js")
-    )
+useSever <- function(){
+  htmlDependency(
+    "sever",
+    version = utils::packageVersion("sever"),
+    package = "sever",
+    src = "packer",
+    script = "sever.js"
   )
+}
+
+#' @rdname dependencies
+#' @export
+use_sever <- function(){
+  .Deprecated("useSever", "sever")
+  useSever()
 }

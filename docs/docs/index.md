@@ -23,7 +23,7 @@ remotes::install_github("JohnCoene/sever")
 
 ## Usage
 
-1. Place `use_sever()` in your Shiny UI.
+1. Place `useSever()` in your Shiny UI.
 2. Use `sever()` to customise the disconnected screen.
 3. Use `cleave()` to customise _hard_ error messages. 
 4. Use `chisel()` to customise _soft_ error messages. 
@@ -31,14 +31,14 @@ remotes::install_github("JohnCoene/sever")
 
 ## Example
 
-Place `use_sever` in your Shiny UI and use the `sever` function server-side, cancel the session from the terminal to see the customised screen.
+Place `useSever` in your Shiny UI and use the `sever` function server-side, cancel the session from the terminal to see the customised screen.
 
 ```r
 library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   h1("sever")
 )
 

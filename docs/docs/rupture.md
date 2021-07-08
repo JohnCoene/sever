@@ -7,7 +7,7 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
- use_sever(),
+ useSever(),
  h1("rupture"),
  p("Wait for idle screen")
 )

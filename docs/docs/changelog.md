@@ -3,6 +3,8 @@
 # sever 0.0.7.9000
 
 - Fix image background [#8](https://github.com/JohnCoene/sever/issues/8)
+- Use webpack for JavaScript (via packer) now minified dependencies.
+- Deprecate `use_sever` in favour of `useSever`
 
 # sever 0.0.6
 

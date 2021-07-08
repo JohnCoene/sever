@@ -140,7 +140,7 @@
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   uiOutput(&quot;error&quot;)
 )
 
@@ -159,7 +159,7 @@ shinyApp(ui, server)
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   textInput(&quot;name&quot;, &quot;Your name&quot;)
 )
 

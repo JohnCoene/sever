@@ -7,7 +7,7 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     selectInput("required_input", "Required input",
       choices = c("Red pill", "Blue pill"), 

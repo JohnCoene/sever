@@ -140,12 +140,12 @@
                 <h1 id="cleave">Cleave</h1>
 <p>Cleave will let you customise your Shiny error messages.</p>
 <h2 id="basics">Basics</h2>
-<p>Include <code>use_sever</code> in your UI then use <code>cleave</code> in the server. The <code>cleave</code> function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting <code>center_vertical</code> and <code>center_horizontal</code> to <code>FALSE</code>.</p>
+<p>Include <code>useSever</code> in your UI then use <code>cleave</code> in the server. The <code>cleave</code> function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting <code>center_vertical</code> and <code>center_horizontal</code> to <code>FALSE</code>.</p>
 <pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput(&quot;thing&quot;, width = &quot;100%&quot;)),
     column(8, plotOutput(&quot;plot&quot;))
@@ -175,7 +175,7 @@ shinyApp(ui, server)
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput(&quot;thing&quot;, width = &quot;100%&quot;)),
     column(8, plotOutput(&quot;plot&quot;))
@@ -208,7 +208,7 @@ shinyApp(ui, server)
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput(&quot;thing&quot;, width = &quot;100%&quot;)),
     column(8, plotOutput(&quot;plot&quot;))
@@ -241,7 +241,7 @@ library(sever)
 cleave_theme(color = &quot;white&quot;, bg_color = &quot;black&quot;, duration = .15)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput(&quot;thing&quot;, width = &quot;100%&quot;)),
     column(8, plotOutput(&quot;plot&quot;))
@@ -276,7 +276,7 @@ cl &lt;- tagList(
 )
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   h4(&quot;Look at my plot&quot;),
   plotOutput(&quot;plot&quot;)
 )

@@ -4,14 +4,14 @@ Cleave will let you customise your Shiny error messages.
 
 ## Basics
 
-Include `use_sever` in your UI then use `cleave` in the server. The `cleave` function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting `center_vertical` and `center_horizontal` to `FALSE`.
+Include `useSever` in your UI then use `cleave` in the server. The `cleave` function takes several arguments to customise your errors, by default it forwards the error message, only centering it in the middle of the element, which you can turn off by setting `center_vertical` and `center_horizontal` to `FALSE`.
 
 ```r
 library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput("thing", width = "100%")),
     column(8, plotOutput("plot"))
@@ -47,7 +47,7 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput("thing", width = "100%")),
     column(8, plotOutput("plot"))
@@ -85,7 +85,7 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput("thing", width = "100%")),
     column(8, plotOutput("plot"))
@@ -123,7 +123,7 @@ library(sever)
 cleave_theme(color = "white", bg_color = "black", duration = .15)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   fluidRow(
     column(4, uiOutput("thing", width = "100%")),
     column(8, plotOutput("plot"))
@@ -164,7 +164,7 @@ cl <- tagList(
 )
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   h4("Look at my plot"),
   plotOutput("plot")
 )

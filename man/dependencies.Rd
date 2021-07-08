@@ -2,9 +2,12 @@
 % Please edit documentation in R/deps.R
 \name{dependencies}
 \alias{dependencies}
+\alias{useSever}
 \alias{use_sever}
-\title{Dependnecies}
+\title{Dependencies}
 \usage{
+useSever()
+
 use_sever()
 }
 \value{

@@ -1,28 +1,22 @@
-function watchActivity(opts) {
+export const watchActivity = (opts) => {
+  const logout = () => {
+    rupture(opts);
+  }
+  
+  const resetTimer = () => {
+    clearTimeout(t);
+    t = setTimeout(logout, opts.ms);  // time is in milliseconds (1000 is 1 second)
+  }
+
   var t = setTimeout(logout, opts.ms);
   window.onmousemove = resetTimer; // catches mouse movements
   window.onmousedown = resetTimer; // catches mouse movements
   window.onclick = resetTimer;     // catches mouse clicks
   window.onscroll = resetTimer;    // catches scrolling
   window.onkeypress = resetTimer;  //catches keyboard actions
-
-  function logout() {
-    rupture(opts);
-  }
-
-  function resetTimer() {
-    clearTimeout(t);
-    t = setTimeout(logout, opts.ms);  // time is in milliseconds (1000 is 1 second)
-  }
 }
 
-Shiny.addCustomMessageHandler('rupture-it', function(opts) {
-
-  watchActivity(opts);
-
-});
-
-function rupture(opts){
+const rupture = (opts) => {
   // declare
   var classes = "severed",
     dv = document.createElement("DIV"),
@@ -65,13 +59,13 @@ function rupture(opts){
   document.body.appendChild(parent);
 }
 
-window.unrupt = function(){
-  remove_rupture();
+export const unrupt = () => {
+  removeRupture();
   if(!Shiny.shinyapp.isConnected())
     Shiny.shinyapp.reconnect();
 }
 
-function remove_rupture(){
+const removeRupture = () => {
   let ruptured = document.getElementById('ruptured');
   ruptured.remove();
   let severed = document.getElementsByClassName('severed');

@@ -1,9 +1,4 @@
 .onLoad <- function(libname, pkgname) {
-  shiny::addResourcePath(
-    "sever-assets",
-    system.file("assets", package = "sever")
-  )
-
   options(
     CLEAVE_COLOR = "red",
     CLEAVE_BG_COLOR = NULL,

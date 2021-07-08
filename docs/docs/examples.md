@@ -9,7 +9,7 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   uiOutput("error")
 )
 
@@ -32,7 +32,7 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   textInput("name", "Your name")
 )
 

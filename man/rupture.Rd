@@ -42,7 +42,7 @@ Displays a disconnected screen after \code{ms} milliseconds of inactivity.
 library(shiny)
 
 ui <- fluidPage(
- use_sever(),
+ useSever(),
  h1("rupture")
 )
 

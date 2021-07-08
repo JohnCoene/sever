@@ -4,14 +4,14 @@ Sever will let you customise the Shiny disconnected screen.
 
 ## Basics
 
-Include dependencies with `use_sever` then use the `sever` function to customise the screen, launch the app and stop the server to see the customised screen.
+Include dependencies with `useSever` then use the `sever` function to customise the screen, launch the app and stop the server to see the customised screen.
 
 ``` r
 library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   h1("sever"),
   actionButton("stop", "Stop App")
 )
@@ -45,7 +45,7 @@ disconnected <- sever_default(
 )
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   h1("sever")
 )
 
@@ -71,7 +71,7 @@ disconnected <- tagList(
 )
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   h1("sever")
 )
 
@@ -101,7 +101,7 @@ img <- paste0(
 )
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   h1("sever")
 )
 
@@ -123,7 +123,7 @@ library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(),
+  useSever(),
   h1("sever")
 )
 

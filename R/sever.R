@@ -16,7 +16,7 @@
 #' library(shiny)
 #' 
 #' ui <- fluidPage(
-#'  use_sever(),
+#'  useSever(),
 #'  h1("sever")
 #' )
 #' 

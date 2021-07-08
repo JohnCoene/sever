@@ -18,7 +18,7 @@
 #' library(shiny)
 #' 
 #' ui <- fluidPage(
-#'  use_sever(),
+#'  useSever(),
 #'  h1("rupture")
 #' )
 #' 
@@ -85,7 +85,7 @@ reconnect_button <- function(
 ){
   class <- match.arg(class)
   class <- paste0("btn btn-", class)
-  tags$button(text, onClick = "window.unrupt();", class = class)
+  tags$button(text, onClick = "sever.unrupt();", class = class)
 }
 
 #' @rdname reconnect
@@ -96,7 +96,7 @@ reconnect_link <- function(
 ){
   class <- match.arg(class)
   class <- paste0("text-", class)
-  tags$a(text, onClick = "window.unrupt();", class = class)
+  tags$a(text, onClick = "sever.unrupt();", class = class)
 }
 
 #' @rdname reconnect
@@ -109,7 +109,7 @@ f7_reconnect_button <- function(
     text,
     style = paste0("color:", color, ";background-color:#fff;"),
     class = "button button-raised",
-    onClick = "window.unrupt();"
+    onClick = "sever.unrupt();"
   )
 }
 

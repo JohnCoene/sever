@@ -138,12 +138,12 @@
                 <h1 id="sever">Sever</h1>
 <p>Sever will let you customise the Shiny disconnected screen.</p>
 <h2 id="basics">Basics</h2>
-<p>Include dependencies with <code>use_sever</code> then use the <code>sever</code> function to customise the screen, launch the app and stop the server to see the customised screen.</p>
+<p>Include dependencies with <code>useSever</code> then use the <code>sever</code> function to customise the screen, launch the app and stop the server to see the customised screen.</p>
 <pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   h1(&quot;sever&quot;),
   actionButton(&quot;stop&quot;, &quot;Stop App&quot;)
 )
@@ -172,7 +172,7 @@ disconnected &lt;- sever_default(
 )
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   h1(&quot;sever&quot;)
 )
 
@@ -194,7 +194,7 @@ disconnected &lt;- tagList(
 )
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   h1(&quot;sever&quot;)
 )
 
@@ -218,7 +218,7 @@ img &lt;- paste0(
 )
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   h1(&quot;sever&quot;)
 )
 
@@ -235,7 +235,7 @@ shinyApp(ui, server)
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   h1(&quot;sever&quot;)
 )
 

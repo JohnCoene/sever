@@ -18,14 +18,14 @@ Good-looking problems: customise your Shiny disconnected screen and error messag
 
 ## Usage
 
-Include dependencies with `use_sever` then use the `sever` function to customise the screen, launch the app and stop the server to see the customised screen.
+Include dependencies with `useSever` then use the `sever` function to customise the screen, launch the app and stop the server to see the customised screen.
 
 ``` r
 library(shiny)
 library(sever)
 
 ui <- fluidPage(
-  use_sever(), # import dependencies
+  useSever(), # import dependencies
   h1("sever")
 )
 

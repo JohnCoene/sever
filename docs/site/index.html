@@ -138,19 +138,19 @@ remotes::install_github(&quot;JohnCoene/sever&quot;)
 </code></pre>
 <h2 id="usage">Usage</h2>
 <ol>
-<li>Place <code>use_sever()</code> in your Shiny UI.</li>
+<li>Place <code>useSever()</code> in your Shiny UI.</li>
 <li>Use <code>sever()</code> to customise the disconnected screen.</li>
 <li>Use <code>cleave()</code> to customise <em>hard</em> error messages. </li>
 <li>Use <code>chisel()</code> to customise <em>soft</em> error messages. </li>
 <li>Use <code>rupture()</code> to show an idle screen. </li>
 </ol>
 <h2 id="example">Example</h2>
-<p>Place <code>use_sever</code> in your Shiny UI and use the <code>sever</code> function server-side, cancel the session from the terminal to see the customised screen.</p>
+<p>Place <code>useSever</code> in your Shiny UI and use the <code>sever</code> function server-side, cancel the session from the terminal to see the customised screen.</p>
 <pre><code class="language-r">library(shiny)
 library(sever)
 
 ui &lt;- fluidPage(
-  use_sever(),
+  useSever(),
   h1(&quot;sever&quot;)
 )
 
@@ -218,5 +218,5 @@ shinyApp(ui, server)
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-05-05 15:55:47.791079+00:00
+Build Date UTC : 2021-07-08 16:13:42.507172+00:00
 -->
