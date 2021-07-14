@@ -1,4 +1,4 @@
-# sever 0.0.7.9000
+# sever 0.0.7
 
 - Fix image background [#8](https://github.com/JohnCoene/sever/issues/8)
 - Use webpack for JavaScript (via packer) now minified dependencies.
