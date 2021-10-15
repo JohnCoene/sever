@@ -1,12 +1,16 @@
 # Changelog
 
-# sever 0.0.7
+## sever 0.0.7.9000
+
+- Added `.class` argument to button and links functions.
+
+## sever 0.0.7
 
 - Fix image background [#8](https://github.com/JohnCoene/sever/issues/8)
 - Use webpack for JavaScript (via packer) now minified dependencies.
 - Deprecate `use_sever` in favour of `useSever`
 
-# sever 0.0.6
+## sever 0.0.6
 
 - Added `rupture` to display a disconnected message after the user has been idle for a while.
 

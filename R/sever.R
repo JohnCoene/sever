@@ -68,6 +68,8 @@ sever <- function(
 #' @param text The text to use on the button.
 #' @param class The class to apply to the button.
 #' @param color Color of button.
+#' @param .class Additional class to pass to the link
+#' or the button.
 #' 
 #' @section Functions:
 #' \itemize{
@@ -82,10 +84,12 @@ sever <- function(
 #' @export
 reload_button <- function(
   text = "reload", 
-  class = c("default", "danger", "info", "success", "warning")
+  class = c("default", "danger", "info", "success", "warning"),
+  .class = ""
 ){
   class <- match.arg(class)
   class <- paste0("btn btn-", class)
+  class <- paste(class, .class)
   tags$button(text, onClick = "location.reload();", class = class)
 }
 
@@ -93,10 +97,12 @@ reload_button <- function(
 #' @export
 reload_link <- function(
   text = "reload", 
-  class = c("default", "danger", "info", "success", "warning")
+  class = c("default", "danger", "info", "success", "warning"),
+  .class = ""
 ){
   class <- match.arg(class)
   class <- paste0("text-", class)
+  class <- paste(class, .class)
   tags$a(text, onClick = "location.reload();", class = class)
 }
 

@@ -8,12 +8,14 @@
 \usage{
 reload_button(
   text = "reload",
-  class = c("default", "danger", "info", "success", "warning")
+  class = c("default", "danger", "info", "success", "warning"),
+  .class = ""
 )
 
 reload_link(
   text = "reload",
-  class = c("default", "danger", "info", "success", "warning")
+  class = c("default", "danger", "info", "success", "warning"),
+  .class = ""
 )
 
 f7_reload_button(text = "reload", color = "#000")
@@ -22,6 +24,9 @@ f7_reload_button(text = "reload", color = "#000")
 \item{text}{The text to use on the button.}
 
 \item{class}{The class to apply to the button.}
+
+\item{.class}{Additional class to pass to the link
+or the button.}
 
 \item{color}{Color of button.}
 }

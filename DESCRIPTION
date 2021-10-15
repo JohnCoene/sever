@@ -1,6 +1,6 @@
 Package: sever
 Title: Customise 'Shiny' Disconnected Screens and Error Messages
-Version: 0.0.7
+Version: 0.0.7.9000
 Date: 2021-07-14
 Authors@R: 
     person(given = "John",
@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports:
   cli,
   shiny,

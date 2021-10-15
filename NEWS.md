@@ -1,3 +1,7 @@
+# sever 0.0.7.9000
+
+- Added `.class` argument to button and links functions.
+
 # sever 0.0.7
 
 - Fix image background [#8](https://github.com/JohnCoene/sever/issues/8)
