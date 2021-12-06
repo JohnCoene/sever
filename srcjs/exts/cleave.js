@@ -53,7 +53,7 @@ export const cleave = (
   // get parent
   dom = document.getElementById(id);
   if(dom == undefined){
-    console.log("Cannot find", id);
+    console.error("Cannot find", id);
     return ;
   }
 
@@ -82,7 +82,7 @@ export const cleave = (
   });
 
   if(exists === true){
-    console.log("cleave on", id, "already exists");
+    console.info("cleave on", id, "already exists");
     return;
   }
 
@@ -120,5 +120,4 @@ export const cleave = (
   // append overlay to dom
   dom.innerHTML = '';
   dom.appendChild(overlay);
-  
 }
