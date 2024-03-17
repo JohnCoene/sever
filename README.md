@@ -3,7 +3,6 @@
 <img src="./man/figures/logo.png" height=200/>
 
 <!-- badges: start -->
-[![R build status](https://github.com/JohnCoene/sever/workflows/R-CMD-check/badge.svg)](https://github.com/JohnCoene/sever/actions)
 [![R-CMD-check](https://github.com/JohnCoene/sever/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JohnCoene/sever/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
